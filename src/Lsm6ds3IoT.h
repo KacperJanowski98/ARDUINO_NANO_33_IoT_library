@@ -91,6 +91,31 @@
 #define LSM6DS3_MD1_CFG  		            0X5E
 #define LSM6DS3_MD2_CFG  		            0X5F
 
+/***** Tryby pracy akcelerometru (ODR_XL - CTRL1_XL) *****/
+#define POWER_DOWN                              0x0
+#define LOW_POWER_12_5                          0x1
+#define LOW_POWER_26                            0x2
+#define LOW_POWER_52                            0x3
+#define NORMAL_MODE_104                         0x4
+#define NORMAL_MODE_208                         0x5
+#define HIGH_PERFORMANCE_416                    0x6
+#define HIGH_PERFORMANCE_833                    0x7
+#define HIGH_PERFORMANCE_1_66                   0x8
+#define HIGH_PERFORMANCE_3_33                   0x9
+#define HIGH_PERFORMANCE_6_66                   0xA
+
+/********** Przyśpieszenie (FS_XL - CTRL1_XL) ************/
+#define ACC_2G                                  0x0
+#define ACC_4G                                  0x2
+#define ACC_8G                                  0x3
+#define ACC_16G                                 0x1
+
+/*********** Pasmo filtru (BW_XL - CTRL1_XL) *************/
+#define ACC_FILTER_400                          0x0
+#define ACC_FILTER_200                          0x1
+#define ACC_FILTER_100                          0x2
+#define ACC_FILTER_50                           0x3
+
 /** Ta struktura zawiera ustawienia używane do obliczeń **/
 typedef struct {
   public:
@@ -106,6 +131,7 @@ typedef struct {
         uint16_t accelRange;
         uint16_t accelSampleRate;
         uint16_t accelBandWidth;
+        uint16_t accelInitialVal;
 
         // Temerature
         uint8_t tempEnable;
@@ -126,6 +152,8 @@ public:
 class LSM6DS3Core
 {
 public:
+      void ACC_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL);
+
       void Accelerometer_Init(uint16_t Value);
 
       uint16_t Accelerometer_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr);

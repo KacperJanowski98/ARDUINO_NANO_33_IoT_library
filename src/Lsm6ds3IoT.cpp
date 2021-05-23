@@ -88,16 +88,16 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
 
   switch (range->accelRange)
   {
-  case 2:  // +-2g
+  case 0x0:  // +-2g
     sensitivity = (0.061 / 1000);
     break;
-  case 4:  // +-4g
+  case 0x2:  // +-4g
     sensitivity = (0.122 / 1000);
     break;
-  case 8:  // +-8g
+  case 0x3:  // +-8g
     sensitivity = (0.244 / 1000);
     break;
-  case 16:  // +-16g
+  case 0x1:  // +-16g
     sensitivity = (0.488 / 1000);
     break;
   default:
@@ -117,3 +117,18 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
   OutData->Za = ((float)Z * sensitivity); 
 }
 
+/**
+ * @brief Metoda ustawiająca tryb pracy akcelerometru rejestr CTRL1_XL (dokumentacja str. 54)
+ * 
+ * @param Settings Struktura inicjalizująca parametry sensora
+ * @param ODR_XL Tryb pracy
+ * @param FS_XL Skala przyśpieszenia
+ * @param BW_XL Pasmo filtru antyaliasingowego
+ */
+void LSM6DS3Core::ACC_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL){
+     Settings->accelInitialVal = ((ODR_XL << 4 )| (FS_XL << 2) | BW_XL);
+
+     Settings->accelRange = FS_XL;
+
+     Settings->gyroBandWidth = BW_XL;
+}
