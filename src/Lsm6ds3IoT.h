@@ -14,10 +14,10 @@
 #include "Arduino.h"
 #include "Wire.h"
 
-/************* LSM6DS3 sensor I2C address **************/
+/************* LSM6DS3 sensor I2C adres **************/
 #define LSM6DS3_I2C                             0x6A 
 
-/******************* Device Register *******************/
+/**************** Adresy w urządzeniu ****************/
 #define LSM6DS3_FUNC_CFG_ACCESS 			0X01
 #define LSM6DS3_SENSOR_SYNC_TIME  	    	      0X04
 #define LSM6DS3_FIFO_CTRL1  		        	0X06
@@ -91,7 +91,7 @@
 #define LSM6DS3_MD1_CFG  		            0X5E
 #define LSM6DS3_MD2_CFG  		            0X5F
 
-/** This struct holds the settings the driver uses to do calculations **/
+/** Ta struktura zawiera ustawienia używane do obliczeń **/
 typedef struct {
   public:
         // Gyroscope
@@ -111,6 +111,7 @@ typedef struct {
         uint8_t tempEnable;
 }SensorSettings_t;
 
+/** Ta struktura zawiera zmienne na dane wyjściowe **/
 typedef struct {
 public:
       float Xa;
@@ -118,39 +119,34 @@ public:
       float Za;
 }AccelOutput_t;
 
+/**
+ * @brief Klasa zawierająca podstawowe funkcje/metody
+ * 
+ */
 class LSM6DS3Core
 {
 public:
-      //LSM6DS3Core(uint8_t, uint8_t);
-      //LSM6DS3Core(uint8_t);
+      void Accelerometer_Init(uint16_t Value);
 
-      void beginCore(void);
+      uint16_t Accelerometer_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr);
 
-      void readRegister(uint8_t*, uint8_t);
+      void Accelerometer_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg);
 
-      void readRegisterInt16(int16_t*, uint8_t offset);
-
-      void writeRegister(uint8_t, uint8_t);
+      void Accelerometer_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value);
 };
 
+/**
+ * @brief Klasa rozszerzająca podstawowe funkcje/metody
+ * 
+ */
 class LSM6DS3 : public LSM6DS3Core
 {
 public:
       SensorSettings_t settings;
 
+      void Accelerometer_XYZ_Output_open();
       
+      void Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSettings_t *range);
 };
-
-void Accelerometer_Init(uint16_t Value);
-
-void Accelerometer_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value);
-
-void Accelerometer_XYZ_Output_open();
-
-void Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSettings_t *range);
-
-uint16_t Accelerometer_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr);
-
-void Accelerometer_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg);
 
 #endif //Accelerometer

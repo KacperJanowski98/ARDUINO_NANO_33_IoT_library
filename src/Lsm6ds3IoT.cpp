@@ -15,7 +15,7 @@
  * 
  * @param Value Wartość szesnastkowa odpowiedzialna za konfiguracja trybu pracy akcelerometru (dokumentacja str. 54)
  */
-void Accelerometer_Init( uint16_t Value){
+void LSM6DS3Core::Accelerometer_Init( uint16_t Value){
   Wire.beginTransmission(LSM6DS3_I2C);  // Adres urządzenia 0x6A
   Wire.write(LSM6DS3_CTRL1_XL); // Rejest kontrolny CTRL1_XL register (53.s)
   Wire.write(Value); // bity [7 6 5 4] Wyjściowa prędkość transmisji danych i wybór trybu zasilania, bity [3 2] przyśpieszenie, bity [1 0] filtr 
@@ -26,7 +26,7 @@ void Accelerometer_Init( uint16_t Value){
  * @brief Metoda konfigurująca rejestr odpiewiedzialny za aktywowanie odczytywania rejestrów, w których znajdują sie wyniki pomiaru
  * 
  */
-void Accelerometer_XYZ_Output_open(){
+void LSM6DS3::Accelerometer_XYZ_Output_open(){
   Wire.beginTransmission(LSM6DS3_I2C);  // Adres urządzenia 0x6A
   Wire.write(LSM6DS3_CTRL9_XL); // Rejest kontrolny CTRL9_XL register (61.s)
   Wire.write(0x38); // osie X, Y, Z wyjściowe dane odblokowane 
@@ -40,7 +40,7 @@ void Accelerometer_XYZ_Output_open(){
  * @param RegisterAddr Adres rejestru który ma zostać skonfigurowany
  * @param Value Wartość odpowiedzialna za konfiguracje rejestru
  */
-void Accelerometer_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value){
+void LSM6DS3Core::Accelerometer_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value){
   Wire.beginTransmission(DeviceAddr);  
   Wire.write(RegisterAddr); 
   Wire.write(Value); 
@@ -54,7 +54,7 @@ void Accelerometer_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, ui
  * @param RegisterAddr Adres rejestru z którego ma zostać odczytana wartość
  * @return uint16_t 
  */
-uint16_t Accelerometer_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr){
+uint16_t LSM6DS3Core::Accelerometer_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr){
   Wire.beginTransmission(DeviceAddr); 
   Wire.write(RegisterAddr); 
   Wire.endTransmission(true); // Zakończenie transmisji
@@ -69,7 +69,7 @@ uint16_t Accelerometer_one_register_read(uint16_t DeviceAddr, uint16_t RegisterA
  * @param RegisterAddr Adres rejestru od które ma zostać rozpoczete odczytywanie
  * @param numOfReg Liczba kolejnych rejestrów do
  */
-void Accelerometer_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg){
+void LSM6DS3Core::Accelerometer_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg){
   Wire.beginTransmission(DeviceAddr); 
   Wire.write(RegisterAddr); 
   Wire.endTransmission(false); // Nie kończ transmisji na jednym rejestrze 
@@ -82,7 +82,7 @@ void Accelerometer_multiple_register_read(uint16_t DeviceAddr, uint16_t Register
  * @param OutData Struktura ze zmiennymi do zapisu wyników pomiaru przyśpieszenia
  * @param range Struktura inicjalizująca parametry sensora, w tej metodzie potrzebny jest tylko zakres przyśpieszenia (accelRange)
  */
-void Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSettings_t *range){
+void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSettings_t *range){
   int16_t X = 0, Y = 0, Z = 0;  // zmienne lokalne pomocne w obliczeniu wartości końcowych pomiaru
   double sensitivity; // zmienna lokalna do przetrzymania rozdzielczosci potrzebnej do przeskalowania wyników odczytachy z rejestrów
 
