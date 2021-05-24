@@ -137,7 +137,7 @@ typedef struct {
         uint8_t tempEnable;
 }SensorSettings_t;
 
-/** Ta struktura zawiera zmienne na dane wyjściowe **/
+/** Ta struktura zawiera zmienne dla dane wyjściowe **/
 typedef struct {
 public:
       float Xa;

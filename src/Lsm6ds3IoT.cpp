@@ -104,6 +104,9 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
     break;
   }
 
+  // Sprawdzenie czy w STATUS_REG bit nr.1 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć do odczytania w wyjsciowych rejestrach akcelerometry
+  while (!(Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 0))){;}
+
   Wire.beginTransmission(LSM6DS3_I2C); 
   Wire.write(0x28); // Adres rozpoczynający odczytywanie danych z akcelerometru  (Dokumentacja str. 66)
   Wire.endTransmission(false); // Nie kończ transmisji na jednym rejestrze 
