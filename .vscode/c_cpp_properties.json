@@ -10,6 +10,7 @@
             "includePath": [
                 "d:/Projekty/LabSW/Akcelerometr_SW/include",
                 "d:/Projekty/LabSW/Akcelerometr_SW/src",
+                "d:/Projekty/LabSW/Akcelerometr_SW/lib/LSM6DS3",
                 "C:/Users/kacpe/.platformio/packages/framework-arduino-samd/libraries/Wire",
                 "C:/Users/kacpe/.platformio/packages/framework-arduino-samd/cores/arduino/api/deprecated",
                 "C:/Users/kacpe/.platformio/packages/framework-arduino-samd/cores/arduino/api/deprecated-avr-comp",
@@ -38,6 +39,7 @@
                 "path": [
                     "d:/Projekty/LabSW/Akcelerometr_SW/include",
                     "d:/Projekty/LabSW/Akcelerometr_SW/src",
+                    "d:/Projekty/LabSW/Akcelerometr_SW/lib/LSM6DS3",
                     "C:/Users/kacpe/.platformio/packages/framework-arduino-samd/libraries/Wire",
                     "C:/Users/kacpe/.platformio/packages/framework-arduino-samd/cores/arduino/api/deprecated",
                     "C:/Users/kacpe/.platformio/packages/framework-arduino-samd/cores/arduino/api/deprecated-avr-comp",
