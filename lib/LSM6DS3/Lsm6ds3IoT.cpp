@@ -172,7 +172,7 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
  * @param ROUNDING bity 7 6 5 
  * @param ST_G bity 3 2
  * @param ST_XL bity 1 0
- * @return uint16_t 
+ * @return uint16_t Wartość do wpsiania do rejestru CTRL5_C
  */
 uint16_t LSM6DS3::Config_register_CTRL5(uint16_t ROUNDING, uint16_t ST_G, uint16_t ST_XL) {
   return ((ROUNDING << 5 )| (ST_G << 2) | (ST_XL << 0));
@@ -266,6 +266,19 @@ void LSM6DS3::Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *
 }
 
 /**
+ * @brief Funkcja konfigurujaca rejestr CTRL6_C (zdefiniowane wartości w pliku Lsm6ds3IoT.h)
+ *        dokumentacja strona 59
+ * @param TRIG_EN Włączanie wyzwalania czułego na krawędzie danych żyroskopu
+ * @param LVLen Włączanie wyzwalania czułego na poziom danych żyroskopu
+ * @param LVL2_EN Włączenie zatrzasku czułego na poziom żyroskopu
+ * @param XL_HM_MODE Wysokowydajny tryb pracy wyłączony dla akcelerometru
+ * @return uint16_t Wartość do wpsiania do rejestru CTRL6_C
+ */
+uint16_t LSM6DS3::Config_register_CTRL6(uint16_t TRIG_ENval, uint16_t LVLenval, uint16_t LVL2_ENval, uint16_t XL_HM_MODEval) {
+  return ((TRIG_ENval << 7) | (LVLenval << 6) | (LVL2_ENval << 5) | (XL_HM_MODEval << 4));
+}
+
+/**
  * @brief Definicja metod i funkcji odpowiedzialnych za termometr
  * 
  */
@@ -291,4 +304,5 @@ void LSM6DS3::Temperature_read_value(TempOutput_t *OutData) {
   OutData->Ta = ((float)T / 16.0f); // dzielenie przez 16 aby przeskalowac wynik
   OutData->Ta += 25; // dodanie 25 stopni do wyniku, jest to ustawiony offset
 }
+
 

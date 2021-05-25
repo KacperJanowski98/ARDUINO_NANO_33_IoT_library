@@ -163,6 +163,19 @@
 /********** dsp żyroskop (FS_G - CTRL2_G) *************/
 #define G_FULL_SCALE_125                          0x1
 
+/***** Sleep mode żyroskop (SLEEP_G - CTRL4_C) ********/
+#define SLEEP_G_Enable                            0x40
+
+/********** Konfiguracja rejestru CTRL6_C *************/
+#define TRIG_EN                                   1
+#define TRIG_EN_disable                           0
+#define LVLen                                     1
+#define LVLen_disable                             0
+#define LVL2_EN                                   1
+#define LVL2_EN_disable                           0
+#define XL_HM_MODE                                0
+#define XL_HM_MODE_disable                        1
+
 /** Ta struktura zawiera ustawienia używane do obliczeń **/
 typedef struct {
   public:
@@ -251,6 +264,8 @@ public:
       void Gyroscope_XYZ_Output_open();
 
       void Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *range);
+
+      uint16_t Config_register_CTRL6(uint16_t TRIG_ENval, uint16_t LVLenval, uint16_t LVL2_ENval, uint16_t XL_HM_MODEval);
 
       void Temperature_read_value(TempOutput_t *OutData);
 };

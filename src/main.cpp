@@ -37,6 +37,7 @@ void setup() {
   // Dokumentacja str. 57
   Sensor.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL4_C, ACC_BANDWIDTH_BW_XL);
 
+  // Dokumentacja str. 57/58
   Sensor.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL5_C, Sensor.Config_register_CTRL5(GYRO_ACC_ROUND, NORMAL_MODE_ST_ANG, NORAML_MODE_ST_ACC));
 
   Sensor.Accelerometer_High_perf_Disable(Sensor);
