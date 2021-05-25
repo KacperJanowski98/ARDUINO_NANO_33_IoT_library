@@ -123,6 +123,26 @@
 #define ACC_BANDWIDTH_ODR                       ~(1 << 7)
 #define ACC_BANDWIDTH_BW_XL                     (1 << 7)
 
+/**** Circular burst-mode (ROUNDING[2:0] - CTRL5_C) *****/
+#define NO_ROUNDING_ROUND                       0x0
+#define ACC_ONLY_ROUND                          0x1
+#define GYRO_ONLY_ROUND                         0x2
+#define GYRO_ACC_ROUND                          0x3
+#define REG_ROUND                               0x4
+#define ACC_REG_ROUND                           0x5
+#define GTRO_ACC_REG_ROUND                      0x6
+#define GERO_ACC_REG2_ROUND                     0x7
+
+/**** Angular rate self test (ST_G [1:0] - CTRL5_C) ****/
+#define NORMAL_MODE_ST_ANG                      0x0
+#define POSITIVE_SIGN_SELF_TEST_ANG             0x1
+#define NEGATIVE_SIGN_SELF_TEST_ANG             0x3
+
+/*** Accelerometer self test (ST_G [1:0] - CTRL5_C) ****/
+#define NORAML_MODE_ST_ACC                      0x0
+#define POSITIVE_SIGN_SELF_TEST                 0x1
+#define NEGATIVE_SIGN_SELF_TEST                 0x2
+
 /** Ta struktura zawiera ustawienia używane do obliczeń **/
 typedef struct {
   public:
@@ -186,6 +206,8 @@ public:
       void Accelerometer_High_perf_Disable(LSM6DS3 lsm6ds3);
 
       void Accelerometer_High_perf_Enable(LSM6DS3 lsm6ds3);
+
+      uint16_t Config_register_CTRL5(uint16_t ROUNDING, uint16_t ST_G, uint16_t ST_XL);
 };
 
 #endif //Accelerometer

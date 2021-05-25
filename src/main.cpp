@@ -29,7 +29,7 @@ void setup() {
   // Dokumentacja str. 57
   Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL4_C, ACC_BANDWIDTH_BW_XL);
 
-  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL5_C, 0x20);
+  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL5_C, Sensor.Config_register_CTRL5(GYRO_ACC_ROUND, NORMAL_MODE_ST_ANG, NORAML_MODE_ST_ACC));
 
   Sensor.Accelerometer_High_perf_Disable(Sensor);
 
@@ -38,12 +38,13 @@ void setup() {
 
 void loop() {
   Sensor.Accelerometer_XYZ_read_value(&Output, &AccelSet);
-
-  Serial.print("Xa= ");
+  
+  Serial.print("Accel: ");
+  Serial.print("       Xa= ");
   Serial.print(Output.Xa);
-  Serial.print("      Ya= ");
+  Serial.print("       Ya= ");
   Serial.print(Output.Ya);
-  Serial.print("      Za= ");
+  Serial.print("       Za= ");
   Serial.println(Output.Za);
   
   delay(1000);

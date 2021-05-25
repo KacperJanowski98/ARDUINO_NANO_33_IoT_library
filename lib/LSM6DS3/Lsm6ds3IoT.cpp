@@ -11,6 +11,11 @@
 #include "Lsm6ds3IoT.h"
 
 /**
+ * @brief Definicja metod i funkcji odpowiedzialnych za akcelerometr
+ * 
+ */
+
+/**
  * @brief Metoda ustawiająca tryb pracy akcelerometru rejestr CTRL1_XL (dokumentacja str. 54)
  * 
  * @param Settings Struktura inicjalizująca parametry sensora
@@ -19,7 +24,7 @@
  * @param BW_XL Pasmo filtru antyaliasingowego
  */
 void LSM6DS3Core::ACC_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL){
-     Settings->accelInitialVal = ((ODR_XL << 4 )| (FS_XL << 2) | BW_XL);
+     Settings->accelInitialVal = ((ODR_XL << 4 )| (FS_XL << 2) | (BW_XL << 0));
 
      Settings->accelRange = FS_XL;
 
@@ -161,3 +166,19 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
   OutData->Za = ((float)Z * sensitivity); 
 }
 
+/**
+ * @brief Funkcja konfigurujaca rejestr CTRL5_C (zdefiniowane wartości w pliku Lsm6ds3IoT.h)
+ *        dokumentacja strona 57.
+ * @param ROUNDING bity 7 6 5 
+ * @param ST_G bity 3 2
+ * @param ST_XL bity 1 0
+ * @return uint16_t 
+ */
+uint16_t LSM6DS3::Config_register_CTRL5(uint16_t ROUNDING, uint16_t ST_G, uint16_t ST_XL) {
+  return ((ROUNDING << 5 )| (ST_G << 2) | (ST_XL << 0));
+}
+
+/**
+ * @brief Definicja metod i funkcji odpowiedzialnych za żyroskop
+ * 
+ */
