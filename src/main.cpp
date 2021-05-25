@@ -12,7 +12,9 @@
 
 AccelOutput_t Output;
 
-SensorSettings_t AccelSet;
+GyroOutput_t Gyro_Output;
+
+SensorSettings_t LSM6DS3Set;
 
 LSM6DS3 Sensor;
 
@@ -20,9 +22,13 @@ void setup() {
   Serial.begin(9600); // Inicjalizacja komunikacji szeregowej 
   Wire.begin(); // Inicjalizacja biblioteki Wire.h odpowiedzialnej za komunikację po I2C
 
-  Sensor.ACC_Mode_Init(&AccelSet, NORMAL_MODE_208, ACC_2G, ACC_FILTER_400);
+  Sensor.ACC_Mode_Init(&LSM6DS3Set, NORMAL_MODE_208, ACC_2G, ACC_FILTER_400);
 
-  Sensor.Accelerometer_Init(AccelSet.accelInitialVal);
+  Sensor.Accelerometer_Init(LSM6DS3Set.accelInitialVal);
+
+  Sensor.Gyro_Mode_Init(&LSM6DS3Set, NORMAL_MODE_208_G, G_500, 0);
+
+  Sensor.Gyroscope_Init(LSM6DS3Set.gyroInitialVal);
 
   Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL3_C, ACC_AUTO_INC_ADDR);
 
@@ -34,18 +40,34 @@ void setup() {
   Sensor.Accelerometer_High_perf_Disable(Sensor);
 
   Sensor.Accelerometer_XYZ_Output_open();
+
+  Sensor.Gyroscope_XYZ_Output_open();
 }
 
 void loop() {
-  Sensor.Accelerometer_XYZ_read_value(&Output, &AccelSet);
+  Sensor.Accelerometer_XYZ_read_value(&Output, &LSM6DS3Set);
   
-  Serial.print("Accel: ");
+  Sensor.Gyroscope_XYZ_read_value(&Gyro_Output, &LSM6DS3Set);
+
+  Serial.print("Accel[g]: ");
   Serial.print("       Xa= ");
   Serial.print(Output.Xa);
   Serial.print("       Ya= ");
   Serial.print(Output.Ya);
   Serial.print("       Za= ");
   Serial.println(Output.Za);
+
+  Serial.println("");
+
+  Serial.print("Gyro[dps]: ");
+  Serial.print("       Xa= ");
+  Serial.print(Gyro_Output.Xa);
+  Serial.print("       Ya= ");
+  Serial.print(Gyro_Output.Ya);
+  Serial.print("       Za= ");
+  Serial.println(Gyro_Output.Za);
+
+  Serial.println("");
   
   delay(1000);
 }

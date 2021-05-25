@@ -28,7 +28,7 @@ void LSM6DS3Core::ACC_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_XL, uin
 
      Settings->accelRange = FS_XL;
 
-     Settings->gyroBandWidth = BW_XL;
+     Settings->accelBandWidth = BW_XL;
 }
 
 /**
@@ -149,9 +149,9 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
     break;
   }
 
-  // Sprawdzenie czy w STATUS_REG bit nr.1 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć 
+  // Sprawdzenie czy w STATUS_REG bit nr.0 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć 
   // do odczytania w wyjsciowych rejestrach akcelerometry.
-  while (!(Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 0))){;}
+  while (!(LSM6DS3Core::Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 0))){;}
 
   Wire.beginTransmission(LSM6DS3_I2C); 
   Wire.write(0x28); // Adres rozpoczynający odczytywanie danych z akcelerometru  (Dokumentacja str. 66)
@@ -182,3 +182,79 @@ uint16_t LSM6DS3::Config_register_CTRL5(uint16_t ROUNDING, uint16_t ST_G, uint16
  * @brief Definicja metod i funkcji odpowiedzialnych za żyroskop
  * 
  */
+
+/**
+ * @brief 
+ * 
+ * @param Settings 
+ * @param ODR_G 
+ * @param FS_G 
+ * @param FS_125 
+ */
+void LSM6DS3Core::Gyro_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_G, uint16_t FS_G, uint16_t FS_125) {
+  Settings->gyroInitialVal = ((ODR_G << 4) | (FS_G << 2) | (FS_125 << 1));
+
+  Settings->gyroRange = FS_G;
+}
+
+/**
+ * @brief 
+ * 
+ * @param Value 
+ */
+void LSM6DS3Core::Gyroscope_Init( uint16_t Value) {
+  Wire.beginTransmission(LSM6DS3_I2C);  // Adres urządzenia 0x6A
+  Wire.write(LSM6DS3_CTRL2_G); // Rejest kontrolny CTRL2_G register (55.s)
+  Wire.write(Value); // bity [7 6 5 4] Wyjściowa prędkość transmisji danych i wybór trybu zasilania, bity [3 2] wartość dps, bity [1] ful scale 
+  Wire.endTransmission();
+}
+
+
+void LSM6DS3::Gyroscope_XYZ_Output_open(){
+  Wire.beginTransmission(LSM6DS3_I2C);  // Adres urządzenia 0x6A
+  Wire.write(LSM6DS3_CTRL10_C); // Rejest kontrolny CTRL10_C register (61.s)
+  Wire.write(0x38); // osie X, Y, Z wyjściowe dane odblokowane 
+  Wire.endTransmission();
+}
+
+
+void LSM6DS3::Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *range) {
+  int16_t X = 0, Y = 0, Z = 0;  // zmienne lokalne pomocne w obliczeniu wartości końcowych pomiaru
+  double sensitivity; // zmienna lokalna do przetrzymania rozdzielczosci potrzebnej do przeskalowania wyników odczytachy z rejestrów
+
+  switch (range->gyroRange)
+  {
+  case 0x0: // +-250
+    sensitivity = (8.75 / 1000);
+    break;
+  case 0x1: // +-500
+    sensitivity = (17.5 / 1000);
+    break;
+  case 0x2: // +-1000
+    sensitivity = (35 / 1000);
+    break;
+  case 0x3: // +-2000
+    sensitivity = (70 / 1000);
+    break;
+  default:
+    break;
+  }
+
+  // Sprawdzenie czy w STATUS_REG bit nr.1 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć 
+  // do odczytania w wyjsciowych rejestrach akcelerometry.
+  while (!(LSM6DS3Core::Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 1))){;}
+
+  Wire.beginTransmission(LSM6DS3_I2C); 
+  Wire.write(0x22); // Adres rozpoczynający odczytywanie danych z żyroskopu  (Dokumentacja str. 66)
+  Wire.endTransmission(false); // Nie kończ transmisji na jednym rejestrze 
+  Wire.requestFrom(LSM6DS3_I2C, 6, true); // Odczytanie danych z 6 rejestrów, po dwa rejestry dla każdej z osi
+
+  X = (Wire.read() | Wire.read() << 8); // oś X
+  OutData->Xa = ((float)X * sensitivity); 
+  Y = (Wire.read() | Wire.read() << 8); // oś Y
+  OutData->Ya = ((float)Y * sensitivity); 
+  Z = (Wire.read() | Wire.read() << 8); // oś Z
+  OutData->Za = ((float)Z * sensitivity); 
+}
+
+

@@ -143,6 +143,26 @@
 #define POSITIVE_SIGN_SELF_TEST                 0x1
 #define NEGATIVE_SIGN_SELF_TEST                 0x2
 
+/******* Tryby pracy żyroskopu (ODR_G - CTRL2_G) *******/
+#define POWER_DOWN_G                              0x0
+#define LOW_POWER_12_5_G                          0x1
+#define LOW_POWER_26_G                            0x2
+#define LOW_POWER_52_G                            0x3
+#define NORMAL_MODE_104_G                         0x4
+#define NORMAL_MODE_208_G                         0x5
+#define HIGH_PERFORMANCE_416_G                    0x6
+#define HIGH_PERFORMANCE_833_G                    0x7
+#define HIGH_PERFORMANCE_1_66_G                   0x8
+
+/********** dsp żyroskop (FS_G - CTRL2_G) *************/
+#define G_250                                     0x0
+#define G_500                                     0x1
+#define G_1000                                    0x2
+#define G_2000                                    0x3
+
+/********** dsp żyroskop (FS_G - CTRL2_G) *************/
+#define G_FULL_SCALE_125                          0x1
+
 /** Ta struktura zawiera ustawienia używane do obliczeń **/
 typedef struct {
   public:
@@ -151,6 +171,7 @@ typedef struct {
         uint16_t gyroRange;
         uint16_t gyroSampleRate;
         uint16_t gyroBandWidth;
+        uint16_t gyroInitialVal;
 
         // Accelerometer
         uint8_t accelEnable;
@@ -172,6 +193,14 @@ public:
       float Za;
 }AccelOutput_t;
 
+/** Ta struktura zawiera zmienne dla dane wyjściowe **/
+typedef struct {
+public:
+      float Xa;
+      float Ya;
+      float Za;
+}GyroOutput_t;
+
 /**
  * @brief Klasa zawierająca podstawowe funkcje/metody sensora LSM6DS3
  * 
@@ -188,6 +217,10 @@ public:
       void Accelerometer_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg);
 
       void Accelerometer_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value);
+
+      void Gyro_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_G, uint16_t FS_G, uint16_t FS_125);
+
+      void Gyroscope_Init( uint16_t Value);
 };
 
 /**
@@ -208,6 +241,10 @@ public:
       void Accelerometer_High_perf_Enable(LSM6DS3 lsm6ds3);
 
       uint16_t Config_register_CTRL5(uint16_t ROUNDING, uint16_t ST_G, uint16_t ST_XL);
+
+      void Gyroscope_XYZ_Output_open();
+
+      void Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *range);
 };
 
 #endif //Accelerometer
