@@ -184,12 +184,12 @@ uint16_t LSM6DS3::Config_register_CTRL5(uint16_t ROUNDING, uint16_t ST_G, uint16
  */
 
 /**
- * @brief 
+ * @brief Metoda ustawiająca tryb pracy żyroskopu rejestr CTRL2_G (dokumentacja str. 55)
  * 
- * @param Settings 
- * @param ODR_G 
- * @param FS_G 
- * @param FS_125 
+ * @param Settings Struktura inicjalizująca parametry sensora
+ * @param ODR_G Tryb pracy żyroskopu
+ * @param FS_G Ustawienie skali dps (250, 500, 1000, 2000)
+ * @param FS_125 Ustawienie skali dps 125 (wartość 0 - disable)
  */
 void LSM6DS3Core::Gyro_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_G, uint16_t FS_G, uint16_t FS_125) {
   Settings->gyroInitialVal = ((ODR_G << 4) | (FS_G << 2) | (FS_125 << 1));
@@ -198,9 +198,9 @@ void LSM6DS3Core::Gyro_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_G, uin
 }
 
 /**
- * @brief 
+ * @brief Metoda inicjalizująca żyroskop LSM6DS3 
  * 
- * @param Value 
+ * @param Value Wartość szesnastkowa odpowiedzialna za konfiguracja trybu pracy żyroskopu (dokumentacja str. 55)
  */
 void LSM6DS3Core::Gyroscope_Init( uint16_t Value) {
   Wire.beginTransmission(LSM6DS3_I2C);  // Adres urządzenia 0x6A
@@ -209,7 +209,10 @@ void LSM6DS3Core::Gyroscope_Init( uint16_t Value) {
   Wire.endTransmission();
 }
 
-
+/**
+ * @brief Metoda konfigurująca rejestr odpiewiedzialny za aktywowanie odczytywania rejestrów, w których znajdują sie wyniki pomiaru
+ * 
+ */
 void LSM6DS3::Gyroscope_XYZ_Output_open(){
   Wire.beginTransmission(LSM6DS3_I2C);  // Adres urządzenia 0x6A
   Wire.write(LSM6DS3_CTRL10_C); // Rejest kontrolny CTRL10_C register (61.s)
@@ -217,7 +220,12 @@ void LSM6DS3::Gyroscope_XYZ_Output_open(){
   Wire.endTransmission();
 }
 
-
+/**
+ * @brief Metoda wyznaczające końcowe wartości pomiaru żyroskopem we wszystkich osiach X, Y, Z
+ * 
+ * @param OutData Struktura ze zmiennymi do zapisu wyników pomiaru 
+ * @param range Struktura inicjalizująca parametry sensora, w tej metodzie potrzebny jest tylko zakres pracy żyroskopu (gyroRange)
+ */
 void LSM6DS3::Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *range) {
   int16_t X = 0, Y = 0, Z = 0;  // zmienne lokalne pomocne w obliczeniu wartości końcowych pomiaru
   double sensitivity; // zmienna lokalna do przetrzymania rozdzielczosci potrzebnej do przeskalowania wyników odczytachy z rejestrów
@@ -257,4 +265,24 @@ void LSM6DS3::Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *
   OutData->Za = ((float)Z * sensitivity); 
 }
 
+/**
+ * @brief Metoda zwracająca wartosc temeratury w skali stopni celsjusza
+ * 
+ * @param OutData Struktura do przechowyywania oblicznej temperatury
+ */
+void LSM6DS3::Temperature_read_value(TempOutput_t *OutData) {
+  int16_t T = 0;  // zmienna lokalna pomocnicza w obliczeniu wartości końcowej pomiaru
 
+  // Sprawdzenie czy w STATUS_REG bit nr.2 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć 
+  // do odczytania w wyjsciowych rejestrach termometru.
+  while (!(LSM6DS3Core::Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 2))){;}
+
+  Wire.beginTransmission(LSM6DS3_I2C); 
+  Wire.write(0x20); // Adres rozpoczynający odczytywanie danych z żyroskopu  (Dokumentacja str. 66)
+  Wire.endTransmission(false); // Nie kończ transmisji na jednym rejestrze 
+  Wire.requestFrom(LSM6DS3_I2C, 2, true); // Odczytanie danych z 6 rejestrów, po dwa rejestry dla każdej z osi
+
+  T = (Wire.read() | Wire.read() << 8); // oś X
+  OutData->Ta = ((float)T / 16.0f); // dzielenie przez 16 aby przeskalowac wynik
+  OutData->Ta += 25; // dodanie 25 stopni do wyniku, jest to ustawiony offset
+}

@@ -185,7 +185,7 @@ typedef struct {
         uint8_t tempEnable;
 }SensorSettings_t;
 
-/** Ta struktura zawiera zmienne dla dane wyjściowe **/
+/** Ta struktura zawiera zmienne dla dane wyjściowe akcelerometru **/
 typedef struct {
 public:
       float Xa;
@@ -193,13 +193,19 @@ public:
       float Za;
 }AccelOutput_t;
 
-/** Ta struktura zawiera zmienne dla dane wyjściowe **/
+/** Ta struktura zawiera zmienne dla dane wyjściowe żroskopu **/
 typedef struct {
 public:
       float Xa;
       float Ya;
       float Za;
 }GyroOutput_t;
+
+/** Ta struktura zawiera zmienną dla danych wyściowych temperatury **/
+typedef struct {
+public:
+      float Ta;
+}TempOutput_t;
 
 /**
  * @brief Klasa zawierająca podstawowe funkcje/metody sensora LSM6DS3
@@ -245,6 +251,8 @@ public:
       void Gyroscope_XYZ_Output_open();
 
       void Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *range);
+
+      void Temperature_read_value(TempOutput_t *OutData);
 };
 
 #endif //Accelerometer

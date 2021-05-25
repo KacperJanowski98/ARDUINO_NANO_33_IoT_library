@@ -14,6 +14,8 @@ AccelOutput_t Output;
 
 GyroOutput_t Gyro_Output;
 
+TempOutput_t Temp_Output;
+
 SensorSettings_t LSM6DS3Set;
 
 LSM6DS3 Sensor;
@@ -49,6 +51,8 @@ void loop() {
   
   Sensor.Gyroscope_XYZ_read_value(&Gyro_Output, &LSM6DS3Set);
 
+  Sensor.Temperature_read_value(&Temp_Output);
+
   Serial.print("Accel[g]: ");
   Serial.print("       Xa= ");
   Serial.print(Output.Xa);
@@ -66,6 +70,12 @@ void loop() {
   Serial.print(Gyro_Output.Ya);
   Serial.print("       Za= ");
   Serial.println(Gyro_Output.Za);
+
+  Serial.println("");
+
+  Serial.print("Temp[ C]: ");
+  Serial.print("       Ta= ");
+  Serial.println(Temp_Output.Ta);  
 
   Serial.println("");
   
