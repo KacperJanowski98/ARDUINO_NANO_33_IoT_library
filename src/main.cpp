@@ -24,7 +24,10 @@ void setup() {
 
   Sensor.Accelerometer_Init(AccelSet.accelInitialVal);
 
-  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL3_C, 0x04);
+  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL3_C, ACC_AUTO_INC_ADDR);
+
+  // Dokumentacja str. 57
+  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL4_C, ACC_BANDWIDTH_BW_XL);
 
   Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL5_C, 0x20);
 

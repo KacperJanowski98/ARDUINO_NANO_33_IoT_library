@@ -91,7 +91,7 @@
 #define LSM6DS3_MD1_CFG  		            0X5E
 #define LSM6DS3_MD2_CFG  		            0X5F
 
-/***** Tryby pracy akcelerometru (ODR_XL - CTRL1_XL) *****/
+/***** Tryby pracy akcelerometru (ODR_XL - CTRL1_XL) ******/
 #define POWER_DOWN                              0x0
 #define LOW_POWER_12_5                          0x1
 #define LOW_POWER_26                            0x2
@@ -104,17 +104,24 @@
 #define HIGH_PERFORMANCE_3_33                   0x9
 #define HIGH_PERFORMANCE_6_66                   0xA
 
-/********** Przyśpieszenie (FS_XL - CTRL1_XL) ************/
+/********** Przyśpieszenie (FS_XL - CTRL1_XL) *************/
 #define ACC_2G                                  0x0
 #define ACC_4G                                  0x2
 #define ACC_8G                                  0x3
 #define ACC_16G                                 0x1
 
-/*********** Pasmo filtru (BW_XL - CTRL1_XL) *************/
+/*********** Pasmo filtru (BW_XL - CTRL1_XL) **************/
 #define ACC_FILTER_400                          0x0
 #define ACC_FILTER_200                          0x1
 #define ACC_FILTER_100                          0x2
 #define ACC_FILTER_50                           0x3
+
+/******* Inkrementacja adresów (IF_INC - CTRL3_C) ********/
+#define ACC_AUTO_INC_ADDR                       0x04
+
+/* Wybór pasma akcelerometru (XL_BW_SCAL_ORD - CTRL4_C) */
+#define ACC_BANDWIDTH_ODR                       ~(1 << 7)
+#define ACC_BANDWIDTH_BW_XL                     (1 << 7)
 
 /** Ta struktura zawiera ustawienia używane do obliczeń **/
 typedef struct {
