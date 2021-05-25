@@ -218,11 +218,11 @@ public:
 
       void Accelerometer_Init(uint16_t Value);
 
-      uint16_t Accelerometer_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr);
+      uint16_t LSM6DS3_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr);
 
-      void Accelerometer_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg);
+      void LSM6DS3_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg);
 
-      void Accelerometer_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value);
+      void LSM6DS3_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value);
 
       void Gyro_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_G, uint16_t FS_G, uint16_t FS_125);
 

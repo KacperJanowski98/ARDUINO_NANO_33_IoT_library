@@ -32,12 +32,12 @@ void setup() {
 
   Sensor.Gyroscope_Init(LSM6DS3Set.gyroInitialVal);
 
-  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL3_C, ACC_AUTO_INC_ADDR);
+  Sensor.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL3_C, ACC_AUTO_INC_ADDR);
 
   // Dokumentacja str. 57
-  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL4_C, ACC_BANDWIDTH_BW_XL);
+  Sensor.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL4_C, ACC_BANDWIDTH_BW_XL);
 
-  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL5_C, Sensor.Config_register_CTRL5(GYRO_ACC_ROUND, NORMAL_MODE_ST_ANG, NORAML_MODE_ST_ACC));
+  Sensor.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL5_C, Sensor.Config_register_CTRL5(GYRO_ACC_ROUND, NORMAL_MODE_ST_ANG, NORAML_MODE_ST_ACC));
 
   Sensor.Accelerometer_High_perf_Disable(Sensor);
 

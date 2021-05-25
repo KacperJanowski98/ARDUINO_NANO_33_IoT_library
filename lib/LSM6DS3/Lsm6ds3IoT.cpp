@@ -50,9 +50,9 @@ void LSM6DS3Core::Accelerometer_Init( uint16_t Value){
  */
 void LSM6DS3::Accelerometer_High_perf_Disable(LSM6DS3 lsm6ds3) {
   // Ustawienie '1' w G_HM_MODE, wyłączenie trybu high_performance (dokumentacja str. 59)
-  lsm6ds3.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL7_G, (1 << 7));
+  lsm6ds3.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL7_G, (1 << 7));
   // Włączenie trybu oszczędzania energii oraz normalnego (dokumentacja str. 59)
-  lsm6ds3.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL6_C, (1 << 4));
+  lsm6ds3.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL6_C, (1 << 4));
 }
 
 /**
@@ -62,9 +62,9 @@ void LSM6DS3::Accelerometer_High_perf_Disable(LSM6DS3 lsm6ds3) {
  */
 void LSM6DS3::Accelerometer_High_perf_Enable(LSM6DS3 lsm6ds3) {
   // Ustawienie '1' w G_HM_MODE, wyłączenie trybu high_performance (dokumentacja str. 59)
-  lsm6ds3.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL7_G, ~(1 << 7));
+  lsm6ds3.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL7_G, ~(1 << 7));
   // Włączenie trybu oszczędzania energii oraz normalnego (dokumentacja str. 59)
-  lsm6ds3.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL6_C, ~(1 << 4));
+  lsm6ds3.LSM6DS3_register_write(LSM6DS3_I2C, LSM6DS3_CTRL6_C, ~(1 << 4));
 }
 
 /**
@@ -85,7 +85,7 @@ void LSM6DS3::Accelerometer_XYZ_Output_open(){
  * @param RegisterAddr Adres rejestru który ma zostać skonfigurowany
  * @param Value Wartość odpowiedzialna za konfiguracje rejestru
  */
-void LSM6DS3Core::Accelerometer_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value){
+void LSM6DS3Core::LSM6DS3_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value){
   Wire.beginTransmission(DeviceAddr);  
   Wire.write(RegisterAddr); 
   Wire.write(Value); 
@@ -99,7 +99,7 @@ void LSM6DS3Core::Accelerometer_register_write(uint16_t DeviceAddr, uint16_t Reg
  * @param RegisterAddr Adres rejestru z którego ma zostać odczytana wartość
  * @return uint16_t 
  */
-uint16_t LSM6DS3Core::Accelerometer_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr){
+uint16_t LSM6DS3Core::LSM6DS3_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr){
   Wire.beginTransmission(DeviceAddr); 
   Wire.write(RegisterAddr); 
   Wire.endTransmission(true); // Zakończenie transmisji
@@ -114,7 +114,7 @@ uint16_t LSM6DS3Core::Accelerometer_one_register_read(uint16_t DeviceAddr, uint1
  * @param RegisterAddr Adres rejestru od które ma zostać rozpoczete odczytywanie
  * @param numOfReg Liczba kolejnych rejestrów do
  */
-void LSM6DS3Core::Accelerometer_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg){
+void LSM6DS3Core::LSM6DS3_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg){
   Wire.beginTransmission(DeviceAddr); 
   Wire.write(RegisterAddr); 
   Wire.endTransmission(false); // Nie kończ transmisji na jednym rejestrze 
@@ -151,7 +151,7 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
 
   // Sprawdzenie czy w STATUS_REG bit nr.0 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć 
   // do odczytania w wyjsciowych rejestrach akcelerometry.
-  while (!(LSM6DS3Core::Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 0))){;}
+  while (!(LSM6DS3Core::LSM6DS3_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 0))){;}
 
   Wire.beginTransmission(LSM6DS3_I2C); 
   Wire.write(0x28); // Adres rozpoczynający odczytywanie danych z akcelerometru  (Dokumentacja str. 66)
@@ -250,7 +250,7 @@ void LSM6DS3::Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *
 
   // Sprawdzenie czy w STATUS_REG bit nr.1 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć 
   // do odczytania w wyjsciowych rejestrach akcelerometry.
-  while (!(LSM6DS3Core::Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 1))){;}
+  while (!(LSM6DS3Core::LSM6DS3_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 1))){;}
 
   Wire.beginTransmission(LSM6DS3_I2C); 
   Wire.write(0x22); // Adres rozpoczynający odczytywanie danych z żyroskopu  (Dokumentacja str. 66)
@@ -266,6 +266,11 @@ void LSM6DS3::Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *
 }
 
 /**
+ * @brief Definicja metod i funkcji odpowiedzialnych za termometr
+ * 
+ */
+
+/**
  * @brief Metoda zwracająca wartosc temeratury w skali stopni celsjusza
  * 
  * @param OutData Struktura do przechowyywania oblicznej temperatury
@@ -275,7 +280,7 @@ void LSM6DS3::Temperature_read_value(TempOutput_t *OutData) {
 
   // Sprawdzenie czy w STATUS_REG bit nr.2 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć 
   // do odczytania w wyjsciowych rejestrach termometru.
-  while (!(LSM6DS3Core::Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 2))){;}
+  while (!(LSM6DS3Core::LSM6DS3_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 2))){;}
 
   Wire.beginTransmission(LSM6DS3_I2C); 
   Wire.write(0x20); // Adres rozpoczynający odczytywanie danych z żyroskopu  (Dokumentacja str. 66)
@@ -286,3 +291,4 @@ void LSM6DS3::Temperature_read_value(TempOutput_t *OutData) {
   OutData->Ta = ((float)T / 16.0f); // dzielenie przez 16 aby przeskalowac wynik
   OutData->Ta += 25; // dodanie 25 stopni do wyniku, jest to ustawiony offset
 }
+
