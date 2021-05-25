@@ -146,7 +146,7 @@ public:
 }AccelOutput_t;
 
 /**
- * @brief Klasa zawierająca podstawowe funkcje/metody
+ * @brief Klasa zawierająca podstawowe funkcje/metody sensora LSM6DS3
  * 
  */
 class LSM6DS3Core
@@ -164,7 +164,7 @@ public:
 };
 
 /**
- * @brief Klasa rozszerzająca podstawowe funkcje/metody
+ * @brief Klasa rozszerzająca podstawowe funkcje/metody sensora LSM6DS3
  * 
  */
 class LSM6DS3 : public LSM6DS3Core
@@ -175,6 +175,10 @@ public:
       void Accelerometer_XYZ_Output_open();
       
       void Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSettings_t *range);
+
+      void Accelerometer_High_perf_Disable(LSM6DS3 lsm6ds3);
+
+      void Accelerometer_High_perf_Enable(LSM6DS3 lsm6ds3);
 };
 
 #endif //Accelerometer

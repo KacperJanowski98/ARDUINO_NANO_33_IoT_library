@@ -28,7 +28,7 @@ void setup() {
 
   Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL5_C, 0x20);
 
-  Sensor.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL5_C, 0x10);
+  Sensor.Accelerometer_High_perf_Disable(Sensor);
 
   Sensor.Accelerometer_XYZ_Output_open();
 }
@@ -38,9 +38,9 @@ void loop() {
 
   Serial.print("Xa= ");
   Serial.print(Output.Xa);
-  Serial.print("     Ya= ");
+  Serial.print("      Ya= ");
   Serial.print(Output.Ya);
-  Serial.print("     Za= ");
+  Serial.print("      Za= ");
   Serial.println(Output.Za);
   
   delay(1000);

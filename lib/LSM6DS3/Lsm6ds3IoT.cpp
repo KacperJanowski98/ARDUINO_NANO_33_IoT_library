@@ -11,6 +11,22 @@
 #include "Lsm6ds3IoT.h"
 
 /**
+ * @brief Metoda ustawiająca tryb pracy akcelerometru rejestr CTRL1_XL (dokumentacja str. 54)
+ * 
+ * @param Settings Struktura inicjalizująca parametry sensora
+ * @param ODR_XL Tryb pracy
+ * @param FS_XL Skala przyśpieszenia
+ * @param BW_XL Pasmo filtru antyaliasingowego
+ */
+void LSM6DS3Core::ACC_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL){
+     Settings->accelInitialVal = ((ODR_XL << 4 )| (FS_XL << 2) | BW_XL);
+
+     Settings->accelRange = FS_XL;
+
+     Settings->gyroBandWidth = BW_XL;
+}
+
+/**
  * @brief Metoda inicjalizująca akcelerometr LSM6DS3 
  * 
  * @param Value Wartość szesnastkowa odpowiedzialna za konfiguracja trybu pracy akcelerometru (dokumentacja str. 54)
@@ -20,6 +36,30 @@ void LSM6DS3Core::Accelerometer_Init( uint16_t Value){
   Wire.write(LSM6DS3_CTRL1_XL); // Rejest kontrolny CTRL1_XL register (53.s)
   Wire.write(Value); // bity [7 6 5 4] Wyjściowa prędkość transmisji danych i wybór trybu zasilania, bity [3 2] przyśpieszenie, bity [1 0] filtr 
   Wire.endTransmission();
+}
+
+/**
+ * @brief Metoda wyłaczajaca tryb high performance akcelerometru (dokumentacja str. 59)
+ * 
+ * @param lsm6ds3 Obekt klasy LSM6DS3
+ */
+void LSM6DS3::Accelerometer_High_perf_Disable(LSM6DS3 lsm6ds3) {
+  // Ustawienie '1' w G_HM_MODE, wyłączenie trybu high_performance (dokumentacja str. 59)
+  lsm6ds3.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL7_G, (1 << 7));
+  // Włączenie trybu oszczędzania energii oraz normalnego (dokumentacja str. 59)
+  lsm6ds3.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL6_C, (1 << 4));
+}
+
+/**
+ * @brief Metoda włączająca tryb high performance akcelerometru (dokumentacja str. 59)
+ * 
+ * @param lsm6ds3 Obekt klasy LSM6DS3
+ */
+void LSM6DS3::Accelerometer_High_perf_Enable(LSM6DS3 lsm6ds3) {
+  // Ustawienie '1' w G_HM_MODE, wyłączenie trybu high_performance (dokumentacja str. 59)
+  lsm6ds3.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL7_G, ~(1 << 7));
+  // Włączenie trybu oszczędzania energii oraz normalnego (dokumentacja str. 59)
+  lsm6ds3.Accelerometer_register_write(LSM6DS3_I2C, LSM6DS3_CTRL6_C, ~(1 << 4));
 }
 
 /**
@@ -104,7 +144,8 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
     break;
   }
 
-  // Sprawdzenie czy w STATUS_REG bit nr.1 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć do odczytania w wyjsciowych rejestrach akcelerometry
+  // Sprawdzenie czy w STATUS_REG bit nr.1 jest ustawiony na 1, jezeli tak to znaczy że jest nowa wartosć 
+  // do odczytania w wyjsciowych rejestrach akcelerometry.
   while (!(Accelerometer_one_register_read(LSM6DS3_I2C, LSM6DS3_STATUS_REG) & (1 << 0))){;}
 
   Wire.beginTransmission(LSM6DS3_I2C); 
@@ -120,18 +161,3 @@ void LSM6DS3::Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSetting
   OutData->Za = ((float)Z * sensitivity); 
 }
 
-/**
- * @brief Metoda ustawiająca tryb pracy akcelerometru rejestr CTRL1_XL (dokumentacja str. 54)
- * 
- * @param Settings Struktura inicjalizująca parametry sensora
- * @param ODR_XL Tryb pracy
- * @param FS_XL Skala przyśpieszenia
- * @param BW_XL Pasmo filtru antyaliasingowego
- */
-void LSM6DS3Core::ACC_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL){
-     Settings->accelInitialVal = ((ODR_XL << 4 )| (FS_XL << 2) | BW_XL);
-
-     Settings->accelRange = FS_XL;
-
-     Settings->gyroBandWidth = BW_XL;
-}
