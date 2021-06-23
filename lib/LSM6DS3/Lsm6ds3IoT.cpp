@@ -8,7 +8,9 @@
  * @copyright Copyright (c) 2021
  * 
  */
+
 #include "Lsm6ds3IoT.h"
+
 
 /**
  * @brief Definicja metod i funkcji odpowiedzialnych za akcelerometr
