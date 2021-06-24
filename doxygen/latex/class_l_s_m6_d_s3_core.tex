@@ -1,0 +1,208 @@
+\hypertarget{class_l_s_m6_d_s3_core}{}\doxysection{Dokumentacja klasy LSM6\+DS3\+Core}
+\label{class_l_s_m6_d_s3_core}\index{LSM6DS3Core@{LSM6DS3Core}}
+
+
+Klasa zawierająca podstawowe funkcje/metody sensora \mbox{\hyperlink{class_l_s_m6_d_s3}{LSM6\+DS3}}.  
+
+
+
+
+{\ttfamily \#include $<$Lsm6ds3\+Io\+T.\+h$>$}
+
+
+
+Diagram dziedziczenia dla LSM6\+DS3\+Core\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{class_l_s_m6_d_s3_core__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_l_s_m6_d_s3_core_a610b90e2346d4b2fc26aa37f0aabb36e}\label{class_l_s_m6_d_s3_core_a610b90e2346d4b2fc26aa37f0aabb36e}} 
+\mbox{\hyperlink{class_l_s_m6_d_s3_core_a610b90e2346d4b2fc26aa37f0aabb36e}{LSM6\+DS3\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Domyślny, pusty konstruktor klasy \mbox{\hyperlink{class_l_s_m6_d_s3_core}{LSM6\+DS3\+Core}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_l_s_m6_d_s3_core_a6b932161654ecc1f49188208922010b6}\label{class_l_s_m6_d_s3_core_a6b932161654ecc1f49188208922010b6}} 
+\mbox{\hyperlink{class_l_s_m6_d_s3_core_a6b932161654ecc1f49188208922010b6}{$\sim$\+LSM6\+DS3\+Core}} ()
+\begin{DoxyCompactList}\small\item\em Destruktor obiektu klasy \mbox{\hyperlink{class_l_s_m6_d_s3_core}{LSM6\+DS3\+Core}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_s_m6_d_s3_core_a6e2eba1e26d9c700308579c5b4ebb9d8}{ACC\+\_\+\+Mode\+\_\+\+Init}} (\mbox{\hyperlink{struct_sensor_settings__t}{Sensor\+Settings\+\_\+t}} $\ast$Settings, uint16\+\_\+t ODR\+\_\+\+XL, uint16\+\_\+t FS\+\_\+\+XL, uint16\+\_\+t BW\+\_\+\+XL)
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca tryb pracy akcelerometru rejestr CTRL1\+\_\+\+XL (dokumentacja str. 54) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_s_m6_d_s3_core_a72e7b656d4cfbd81a681586ffe8feaf4}{Accelerometer\+\_\+\+Init}} (uint16\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em Metoda inicjalizująca akcelerometr \mbox{\hyperlink{class_l_s_m6_d_s3}{LSM6\+DS3}}. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_l_s_m6_d_s3_core_a2ae1ffc7974f41904f5b416230e0a2e8}{LSM6\+DS3\+\_\+one\+\_\+register\+\_\+read}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t Register\+Addr)
+\begin{DoxyCompactList}\small\item\em Metoda odczytująca wartość z rejestru. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_s_m6_d_s3_core_a99758851e4474fbb5ff4e3a9ddb1c1df}{LSM6\+DS3\+\_\+multiple\+\_\+register\+\_\+read}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t Register\+Addr, uint16\+\_\+t num\+Of\+Reg)
+\begin{DoxyCompactList}\small\item\em Metoda odczytująca wartości z wielu rejestrów jeden po drugim. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_s_m6_d_s3_core_ae797b51afdefac165317661fca830716}{LSM6\+DS3\+\_\+register\+\_\+write}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t Register\+Addr, uint16\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em Metoda odpowiedzialna za zapis Value do rejestru Register\+Addr w urządzeniu o adresie Device\+Addr. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_s_m6_d_s3_core_a95b21195d4fefb712e89f7bcc909078f}{Gyro\+\_\+\+Mode\+\_\+\+Init}} (\mbox{\hyperlink{struct_sensor_settings__t}{Sensor\+Settings\+\_\+t}} $\ast$Settings, uint16\+\_\+t ODR\+\_\+G, uint16\+\_\+t FS\+\_\+G, uint16\+\_\+t FS\+\_\+125)
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca tryb pracy żyroskopu rejestr CTRL2\+\_\+G (dokumentacja str. 55) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_s_m6_d_s3_core_a920b3848b340d2083f4bc2478894d449}{Gyroscope\+\_\+\+Init}} (uint16\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em Metoda inicjalizująca żyroskop \mbox{\hyperlink{class_l_s_m6_d_s3}{LSM6\+DS3}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{class_l_s_m6_d_s3_core_a6e2eba1e26d9c700308579c5b4ebb9d8}\label{class_l_s_m6_d_s3_core_a6e2eba1e26d9c700308579c5b4ebb9d8}} 
+\index{LSM6DS3Core@{LSM6DS3Core}!ACC\_Mode\_Init@{ACC\_Mode\_Init}}
+\index{ACC\_Mode\_Init@{ACC\_Mode\_Init}!LSM6DS3Core@{LSM6DS3Core}}
+\doxysubsubsection{\texorpdfstring{ACC\_Mode\_Init()}{ACC\_Mode\_Init()}}
+{\footnotesize\ttfamily void LSM6\+DS3\+Core\+::\+ACC\+\_\+\+Mode\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sensor_settings__t}{Sensor\+Settings\+\_\+t}} $\ast$}]{Settings,  }\item[{uint16\+\_\+t}]{ODR\+\_\+\+XL,  }\item[{uint16\+\_\+t}]{FS\+\_\+\+XL,  }\item[{uint16\+\_\+t}]{BW\+\_\+\+XL }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parametry}
+{\em Settings} & Struktura inicjalizująca parametry sensora \\
+\hline
+{\em ODR\+\_\+\+XL} & Tryb pracy \\
+\hline
+{\em FS\+\_\+\+XL} & Skala przyśpieszenia \\
+\hline
+{\em BW\+\_\+\+XL} & Pasmo filtru antyaliasingowego \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_l_s_m6_d_s3_core_a72e7b656d4cfbd81a681586ffe8feaf4}\label{class_l_s_m6_d_s3_core_a72e7b656d4cfbd81a681586ffe8feaf4}} 
+\index{LSM6DS3Core@{LSM6DS3Core}!Accelerometer\_Init@{Accelerometer\_Init}}
+\index{Accelerometer\_Init@{Accelerometer\_Init}!LSM6DS3Core@{LSM6DS3Core}}
+\doxysubsubsection{\texorpdfstring{Accelerometer\_Init()}{Accelerometer\_Init()}}
+{\footnotesize\ttfamily void LSM6\+DS3\+Core\+::\+Accelerometer\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parametry}
+{\em Value} & Wartość szesnastkowa odpowiedzialna za konfiguracja trybu pracy akcelerometru (dokumentacja str. 54) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+$<$ Adres urządzenia 0x6A
+
+$<$ Rejest kontrolny CTRL1\+\_\+\+XL register (53.\+s)
+
+$<$ bity \mbox{[}7 6 5 4\mbox{]} Wyjściowa prędkość transmisji danych i wybór trybu zasilania, bity \mbox{[}3 2\mbox{]} przyśpieszenie, bity \mbox{[}1 0\mbox{]} filtr\mbox{\Hypertarget{class_l_s_m6_d_s3_core_a95b21195d4fefb712e89f7bcc909078f}\label{class_l_s_m6_d_s3_core_a95b21195d4fefb712e89f7bcc909078f}} 
+\index{LSM6DS3Core@{LSM6DS3Core}!Gyro\_Mode\_Init@{Gyro\_Mode\_Init}}
+\index{Gyro\_Mode\_Init@{Gyro\_Mode\_Init}!LSM6DS3Core@{LSM6DS3Core}}
+\doxysubsubsection{\texorpdfstring{Gyro\_Mode\_Init()}{Gyro\_Mode\_Init()}}
+{\footnotesize\ttfamily void LSM6\+DS3\+Core\+::\+Gyro\+\_\+\+Mode\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sensor_settings__t}{Sensor\+Settings\+\_\+t}} $\ast$}]{Settings,  }\item[{uint16\+\_\+t}]{ODR\+\_\+G,  }\item[{uint16\+\_\+t}]{FS\+\_\+G,  }\item[{uint16\+\_\+t}]{FS\+\_\+125 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parametry}
+{\em Settings} & Struktura inicjalizująca parametry sensora \\
+\hline
+{\em ODR\+\_\+G} & Tryb pracy żyroskopu \\
+\hline
+{\em FS\+\_\+G} & Ustawienie skali dps (250, 500, 1000, 2000) \\
+\hline
+{\em FS\+\_\+125} & Ustawienie skali dps 125 (wartość 0 -\/ disable) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_l_s_m6_d_s3_core_a920b3848b340d2083f4bc2478894d449}\label{class_l_s_m6_d_s3_core_a920b3848b340d2083f4bc2478894d449}} 
+\index{LSM6DS3Core@{LSM6DS3Core}!Gyroscope\_Init@{Gyroscope\_Init}}
+\index{Gyroscope\_Init@{Gyroscope\_Init}!LSM6DS3Core@{LSM6DS3Core}}
+\doxysubsubsection{\texorpdfstring{Gyroscope\_Init()}{Gyroscope\_Init()}}
+{\footnotesize\ttfamily void LSM6\+DS3\+Core\+::\+Gyroscope\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parametry}
+{\em Value} & Wartość szesnastkowa odpowiedzialna za konfiguracja trybu pracy żyroskopu (dokumentacja str. 55) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+$<$ Adres urządzenia 0x6A
+
+$<$ Rejest kontrolny CTRL2\+\_\+G register (55.\+s)
+
+$<$ bity \mbox{[}7 6 5 4\mbox{]} Wyjściowa prędkość transmisji danych i wybór trybu zasilania, bity \mbox{[}3 2\mbox{]} wartość dps, bity \mbox{[}1\mbox{]} ful scale\mbox{\Hypertarget{class_l_s_m6_d_s3_core_a99758851e4474fbb5ff4e3a9ddb1c1df}\label{class_l_s_m6_d_s3_core_a99758851e4474fbb5ff4e3a9ddb1c1df}} 
+\index{LSM6DS3Core@{LSM6DS3Core}!LSM6DS3\_multiple\_register\_read@{LSM6DS3\_multiple\_register\_read}}
+\index{LSM6DS3\_multiple\_register\_read@{LSM6DS3\_multiple\_register\_read}!LSM6DS3Core@{LSM6DS3Core}}
+\doxysubsubsection{\texorpdfstring{LSM6DS3\_multiple\_register\_read()}{LSM6DS3\_multiple\_register\_read()}}
+{\footnotesize\ttfamily void LSM6\+DS3\+Core\+::\+LSM6\+DS3\+\_\+multiple\+\_\+register\+\_\+read (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint16\+\_\+t}]{Register\+Addr,  }\item[{uint16\+\_\+t}]{num\+Of\+Reg }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parametry}
+{\em Device\+Addr} & Adres urządzenia \\
+\hline
+{\em Register\+Addr} & Adres rejestru od które ma zostać rozpoczete odczytywanie \\
+\hline
+{\em num\+Of\+Reg} & Liczba kolejnych rejestrów do \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+$<$ Nie kończ transmisji na jednym rejestrze
+
+$<$ Odczytanie danych z num\+Of\+Reg rejestrów\mbox{\Hypertarget{class_l_s_m6_d_s3_core_a2ae1ffc7974f41904f5b416230e0a2e8}\label{class_l_s_m6_d_s3_core_a2ae1ffc7974f41904f5b416230e0a2e8}} 
+\index{LSM6DS3Core@{LSM6DS3Core}!LSM6DS3\_one\_register\_read@{LSM6DS3\_one\_register\_read}}
+\index{LSM6DS3\_one\_register\_read@{LSM6DS3\_one\_register\_read}!LSM6DS3Core@{LSM6DS3Core}}
+\doxysubsubsection{\texorpdfstring{LSM6DS3\_one\_register\_read()}{LSM6DS3\_one\_register\_read()}}
+{\footnotesize\ttfamily uint16\+\_\+t LSM6\+DS3\+Core\+::\+LSM6\+DS3\+\_\+one\+\_\+register\+\_\+read (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint16\+\_\+t}]{Register\+Addr }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parametry}
+{\em Device\+Addr} & Adres urządzenia \\
+\hline
+{\em Register\+Addr} & Adres rejestru z którego ma zostać odczytana wartość \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+uint16\+\_\+t Funkcja zwraca zawrtość rejestru podanego w parametrze Register\+Addr 
+\end{DoxyReturn}
+$<$ Zakończenie transmisjiOto graf wywoływań tej funkcji\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_s_m6_d_s3_core_a2ae1ffc7974f41904f5b416230e0a2e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_l_s_m6_d_s3_core_ae797b51afdefac165317661fca830716}\label{class_l_s_m6_d_s3_core_ae797b51afdefac165317661fca830716}} 
+\index{LSM6DS3Core@{LSM6DS3Core}!LSM6DS3\_register\_write@{LSM6DS3\_register\_write}}
+\index{LSM6DS3\_register\_write@{LSM6DS3\_register\_write}!LSM6DS3Core@{LSM6DS3Core}}
+\doxysubsubsection{\texorpdfstring{LSM6DS3\_register\_write()}{LSM6DS3\_register\_write()}}
+{\footnotesize\ttfamily void LSM6\+DS3\+Core\+::\+LSM6\+DS3\+\_\+register\+\_\+write (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint16\+\_\+t}]{Register\+Addr,  }\item[{uint16\+\_\+t}]{Value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parametry}
+{\em Device\+Addr} & Adres urządzenia \\
+\hline
+{\em Register\+Addr} & Adres rejestru który ma zostać skonfigurowany \\
+\hline
+{\em Value} & Wartość odpowiedzialna za konfiguracje rejestru \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Zwracane wartości}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Oto graf wywoływań tej funkcji\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_l_s_m6_d_s3_core_ae797b51afdefac165317661fca830716_icgraph}
+\end{center}
+\end{figure}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_lsm6ds3_io_t_8h}{Lsm6ds3\+Io\+T.\+h}}\item 
+\mbox{\hyperlink{_lsm6ds3_io_t_8cpp}{Lsm6ds3\+Io\+T.\+cpp}}\end{DoxyCompactItemize}

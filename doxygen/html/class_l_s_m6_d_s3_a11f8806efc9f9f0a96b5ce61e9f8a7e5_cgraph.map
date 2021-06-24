@@ -1,0 +1,4 @@
+<map id="LSM6DS3::Temperature_read_value" name="LSM6DS3::Temperature_read_value">
+<area shape="rect" id="node1" title="Metoda zwracająca wartosc temeratury w skali stopni celsjusza." alt="" coords="5,5,167,47"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3_core.html#a2ae1ffc7974f41904f5b416230e0a2e8" title="Metoda odczytująca wartość z rejestru." alt="" coords="215,5,389,47"/>
+</map>

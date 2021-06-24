@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Biblioteka_LSM6DS3: Plik źródłowy Lsm6ds3IoT.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Biblioteka_LSM6DS3
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Biblioteka do sensora LSM6DS3 w Arduino nano 33 IoT</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_lsm6ds3_io_t_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Lsm6ds3IoT.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_lsm6ds3_io_t_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef _LSM6DS3IOT_H_</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define _LSM6DS3IOT_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Wire.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a650b0b42c1f9067f5d67a1b2b51cf5be">   20</a></span>&#160;<span class="preprocessor">#define LSM6DS3_I2C                             0x6A </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#abd886335b93fe665820107d0b0e6cbe6">   26</a></span>&#160;<span class="preprocessor">#define LSM6DS3_FUNC_CFG_ACCESS             0X01</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSOR_SYNC_TIME                  0X04</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_CTRL1                      0X06</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_CTRL2                      0X07</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_CTRL3                      0X08</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_CTRL4                      0X09</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_CTRL5                      0X0A</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define LSM6DS3_ORIENT_CFG_G            0X0B</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define LSM6DS3_INT1_CTRL                   0X0D</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define LSM6DS3_INT2_CTRL                   0X0E</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define LSM6DS3_WHO_AM_I_REG            0X0F</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL1_XL                    0X10</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL2_G                     0X11</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL3_C                     0X12</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL4_C                     0X13</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL5_C                     0X14</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL6_C                     0X15</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL7_G                     0X16</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL8_XL                    0X17</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL9_XL                    0X18</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define LSM6DS3_CTRL10_C                    0X19</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define LSM6DS3_MASTER_CONFIG               0X1A</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define LSM6DS3_WAKE_UP_SRC                     0X1B</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define LSM6DS3_TAP_SRC                     0X1C</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define LSM6DS3_D6D_SRC                     0X1D</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define LSM6DS3_STATUS_REG                      0X1E</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define LSM6DS3_OUT_TEMP_L                      0X20</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define LSM6DS3_OUT_TEMP_H                      0X21</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTX_L_G                    0X22</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTX_H_G                    0X23</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTY_L_G                    0X24</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTY_H_G                    0X25</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTZ_L_G                    0X26</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTZ_H_G                    0X27</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTX_L_XL                   0X28</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTX_H_XL                   0X29</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTY_L_XL                   0X2A</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTY_H_XL                   0X2B</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTZ_L_XL                   0X2C</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define LSM6DS3_OUTZ_H_XL                 0X2D</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB1_REG              0X2E</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB2_REG              0X2F</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB3_REG              0X30</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB4_REG              0X31</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB5_REG              0X32</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB6_REG              0X33</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB7_REG              0X34</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB8_REG              0X35</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB9_REG              0X36</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB10_REG             0X37</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB11_REG               0X38</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define LSM6DS3_SENSORHUB12_REG             0X39</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_STATUS1                0X3A</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_STATUS2              0X3B</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_STATUS3              0X3C</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_STATUS4              0X3D</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_DATA_OUT_L             0X3E</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#define LSM6DS3_FIFO_DATA_OUT_H               0X3F</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#define LSM6DS3_TIMESTAMP0_REG              0X40</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#define LSM6DS3_TIMESTAMP1_REG              0X41</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#define LSM6DS3_TIMESTAMP2_REG              0X42</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#define LSM6DS3_STEP_COUNTER_L              0X4B</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define LSM6DS3_STEP_COUNTER_H              0X4C</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#define LSM6DS3_FUNC_SRC                    0X53</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define LSM6DS3_TAP_CFG1                    0X58</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#define LSM6DS3_TAP_THS_6D                      0X59</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define LSM6DS3_INT_DUR2                    0X5A</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define LSM6DS3_WAKE_UP_THS                     0X5B</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define LSM6DS3_WAKE_UP_DUR                     0X5C</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define LSM6DS3_FREE_FALL                   0X5D</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#define LSM6DS3_MD1_CFG                     0X5E</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#define LSM6DS3_MD2_CFG                     0X5F</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#aad04e0c9afdeec307d5b9cb2062d784d">  103</a></span>&#160;<span class="preprocessor">#define POWER_DOWN                              0x0</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#define LOW_POWER_12_5                          0x1</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#define LOW_POWER_26                            0x2</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#define LOW_POWER_52                            0x3</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#define NORMAL_MODE_104                         0x4</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#define NORMAL_MODE_208                         0x5</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#define HIGH_PERFORMANCE_416                    0x6</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#define HIGH_PERFORMANCE_833                    0x7</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#define HIGH_PERFORMANCE_1_66                   0x8</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#define HIGH_PERFORMANCE_3_33                   0x9</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#define HIGH_PERFORMANCE_6_66                   0xA</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#aa3cc8906b7ed653e01c4ffc12577cb2c">  119</a></span>&#160;<span class="preprocessor">#define ACC_2G                                  0x0</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#define ACC_4G                                  0x2</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#define ACC_8G                                  0x3</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#define ACC_16G                                 0x1</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a5ffccfaeb2e255aa08a2983195957197">  128</a></span>&#160;<span class="preprocessor">#define ACC_FILTER_400                          0x0</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#define ACC_FILTER_200                          0x1</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#define ACC_FILTER_100                          0x2</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#define ACC_FILTER_50                           0x3</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a21be8a9a0dd923526664dea2bef5986c">  137</a></span>&#160;<span class="preprocessor">#define ACC_AUTO_INC_ADDR                       0x04</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a9932bef77df33f9ee886c8f68c9a32ff">  143</a></span>&#160;<span class="preprocessor">#define ACC_BANDWIDTH_ODR                       ~(1 &lt;&lt; 7)</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#define ACC_BANDWIDTH_BW_XL                     (1 &lt;&lt; 7)</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#aabc432d85bd71d9bc4eef1dc87b77d50">  150</a></span>&#160;<span class="preprocessor">#define NO_ROUNDING_ROUND                       0x0</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#define ACC_ONLY_ROUND                          0x1</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#define GYRO_ONLY_ROUND                         0x2</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#define GYRO_ACC_ROUND                          0x3</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#define REG_ROUND                               0x4</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#define ACC_REG_ROUND                           0x5</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#define GTRO_ACC_REG_ROUND                      0x6</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#define GERO_ACC_REG2_ROUND                     0x7</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a9e3a77ec0f9a85e7fcf837490c127dc8">  163</a></span>&#160;<span class="preprocessor">#define NORMAL_MODE_ST_ANG                      0x0</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#define POSITIVE_SIGN_SELF_TEST_ANG             0x1</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#define NEGATIVE_SIGN_SELF_TEST_ANG             0x3</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a56e4b4e098d9ac60bde1d4797c79cc62">  173</a></span>&#160;<span class="preprocessor">#define NORAML_MODE_ST_ACC                      0x0</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#define POSITIVE_SIGN_SELF_TEST                 0x1</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#define NEGATIVE_SIGN_SELF_TEST                 0x2</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#aab804ff3bf20e15b4b048a909f4c7108">  181</a></span>&#160;<span class="preprocessor">#define POWER_DOWN_G                              0x0</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#define LOW_POWER_12_5_G                          0x1</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#define LOW_POWER_26_G                            0x2</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#define LOW_POWER_52_G                            0x3</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#define NORMAL_MODE_104_G                         0x4</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#define NORMAL_MODE_208_G                         0x5</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#define HIGH_PERFORMANCE_416_G                    0x6</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#define HIGH_PERFORMANCE_833_G                    0x7</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#define HIGH_PERFORMANCE_1_66_G                   0x8</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a70c47e3ca27acd959146910c4c5a7a0b">  195</a></span>&#160;<span class="preprocessor">#define G_250                                     0x0</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#define G_500                                     0x1</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#define G_1000                                    0x2</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#define G_2000                                    0x3</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a398b964354f296f868a78bcb7f0f2113">  204</a></span>&#160;<span class="preprocessor">#define G_FULL_SCALE_125                          0x1</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#a17f7682eb50f4ec1e9088347d41de801">  210</a></span>&#160;<span class="preprocessor">#define SLEEP_G_Enable                            0x40</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="_lsm6ds3_io_t_8h.html#af82011d96a19452a3b378018e2d6319f">  216</a></span>&#160;<span class="preprocessor">#define TRIG_EN                                   1</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#define TRIG_EN_disable                           0</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#define LVLen                                     1</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#define LVLen_disable                             0</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#define LVL2_EN                                   1</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#define LVL2_EN_disable                           0</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#define XL_HM_MODE                                0</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">#define XL_HM_MODE_disable                        1</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="struct_sensor_settings__t.html">  229</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="struct_sensor_settings__t.html#a2918acf1a083e1e0cab94380335381c1">  233</a></span>&#160;        uint8_t <a class="code" href="struct_sensor_settings__t.html#a2918acf1a083e1e0cab94380335381c1">gyroEnable</a>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        uint16_t gyroRange;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        uint16_t gyroSampleRate;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        uint16_t gyroBandWidth;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        uint16_t gyroInitialVal;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="struct_sensor_settings__t.html#ae0668205fddacc8667b1b39830cee231">  241</a></span>&#160;        uint8_t <a class="code" href="struct_sensor_settings__t.html#ae0668205fddacc8667b1b39830cee231">accelEnable</a>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        uint8_t accelODROff;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        uint16_t accelRange;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        uint16_t accelSampleRate;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        uint16_t accelBandWidth;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        uint16_t accelInitialVal;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="struct_sensor_settings__t.html#a143258f1fe8c658dadf7f5ce87861f52">  250</a></span>&#160;        uint8_t <a class="code" href="struct_sensor_settings__t.html#a143258f1fe8c658dadf7f5ce87861f52">tempEnable</a>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}<a class="code" href="struct_sensor_settings__t.html">SensorSettings_t</a>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="struct_accel_output__t.html">  257</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <span class="keywordtype">float</span> Xa;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <span class="keywordtype">float</span> Ya;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <span class="keywordtype">float</span> Za;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}<a class="code" href="struct_accel_output__t.html">AccelOutput_t</a>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="struct_gyro_output__t.html">  268</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      <span class="keywordtype">float</span> Xa;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      <span class="keywordtype">float</span> Ya;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordtype">float</span> Za;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}<a class="code" href="struct_gyro_output__t.html">GyroOutput_t</a>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="struct_temp_output__t.html">  279</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      <span class="keywordtype">float</span> Ta;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}<a class="code" href="struct_temp_output__t.html">TempOutput_t</a>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="class_l_s_m6_d_s3_core.html">  288</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_l_s_m6_d_s3_core.html">LSM6DS3Core</a></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="class_l_s_m6_d_s3_core.html#a610b90e2346d4b2fc26aa37f0aabb36e">  295</a></span>&#160;      <a class="code" href="class_l_s_m6_d_s3_core.html#a610b90e2346d4b2fc26aa37f0aabb36e">LSM6DS3Core</a>(){}</div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="class_l_s_m6_d_s3_core.html#a6b932161654ecc1f49188208922010b6">  300</a></span>&#160;      <a class="code" href="class_l_s_m6_d_s3_core.html#a6b932161654ecc1f49188208922010b6">~LSM6DS3Core</a>(){}</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3_core.html#a6e2eba1e26d9c700308579c5b4ebb9d8">ACC_Mode_Init</a>(<a class="code" href="struct_sensor_settings__t.html">SensorSettings_t</a> *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3_core.html#a72e7b656d4cfbd81a681586ffe8feaf4">Accelerometer_Init</a>(uint16_t Value);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      uint16_t <a class="code" href="class_l_s_m6_d_s3_core.html#a2ae1ffc7974f41904f5b416230e0a2e8">LSM6DS3_one_register_read</a>(uint16_t DeviceAddr, uint16_t RegisterAddr);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3_core.html#a99758851e4474fbb5ff4e3a9ddb1c1df">LSM6DS3_multiple_register_read</a>(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3_core.html#ae797b51afdefac165317661fca830716">LSM6DS3_register_write</a>(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3_core.html#a95b21195d4fefb712e89f7bcc909078f">Gyro_Mode_Init</a>(<a class="code" href="struct_sensor_settings__t.html">SensorSettings_t</a> *Settings, uint16_t ODR_G, uint16_t FS_G, uint16_t FS_125);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3_core.html#a920b3848b340d2083f4bc2478894d449">Gyroscope_Init</a>( uint16_t Value);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;};</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="class_l_s_m6_d_s3.html">  321</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_l_s_m6_d_s3.html">LSM6DS3</a> : <span class="keyword">public</span> <a class="code" href="class_l_s_m6_d_s3_core.html">LSM6DS3Core</a></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="class_l_s_m6_d_s3.html#aed663673377c969b61dfae663fdc8b23">  328</a></span>&#160;      <a class="code" href="class_l_s_m6_d_s3.html#aed663673377c969b61dfae663fdc8b23">LSM6DS3</a>(){}</div>
+<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="class_l_s_m6_d_s3.html#ad9d1c959d9b5d15037b12852a60c952c">  333</a></span>&#160;      <a class="code" href="class_l_s_m6_d_s3.html#ad9d1c959d9b5d15037b12852a60c952c">~LSM6DS3</a>(){}</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;      <a class="code" href="struct_sensor_settings__t.html">SensorSettings_t</a> settings;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3.html#a98a6e0ad20bce96a45e57ff30522c290">Accelerometer_XYZ_Output_open</a>();</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;      </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3.html#a5416a3ae3ded6d1b8f48a478e4007aee">Accelerometer_XYZ_read_value</a>(<a class="code" href="struct_accel_output__t.html">AccelOutput_t</a> *OutData, <a class="code" href="struct_sensor_settings__t.html">SensorSettings_t</a> *range);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3.html#a98ec1d6dffd920879823db65e44021af">Accelerometer_High_perf_Disable</a>(<a class="code" href="class_l_s_m6_d_s3.html">LSM6DS3</a> lsm6ds3);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3.html#ae43ce392b8d7a86a57761e78e6154b3d">Accelerometer_High_perf_Enable</a>(<a class="code" href="class_l_s_m6_d_s3.html">LSM6DS3</a> lsm6ds3);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;      uint16_t <a class="code" href="class_l_s_m6_d_s3.html#a900b4cc99e67c7c04162db1c7bb8818c">Config_register_CTRL5</a>(uint16_t ROUNDING, uint16_t ST_G, uint16_t ST_XL);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3.html#a276844f40f90be690cb0f87025044507">Gyroscope_XYZ_Output_open</a>();</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3.html#ac86add4bcabcc750fd9cedf8be71d2a4">Gyroscope_XYZ_read_value</a>(<a class="code" href="struct_gyro_output__t.html">GyroOutput_t</a> *OutData, <a class="code" href="struct_sensor_settings__t.html">SensorSettings_t</a> *range);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;      uint16_t <a class="code" href="class_l_s_m6_d_s3.html#add8c8df4b3807133c7d5292e9f0a042f">Config_register_CTRL6</a>(uint16_t TRIG_ENval, uint16_t LVLenval, uint16_t LVL2_ENval, uint16_t XL_HM_MODEval);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_l_s_m6_d_s3.html#a11f8806efc9f9f0a96b5ce61e9f8a7e5">Temperature_read_value</a>(<a class="code" href="struct_temp_output__t.html">TempOutput_t</a> *OutData);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;};</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//Accelerometer</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">/********************************** (C) COPYRIGHT Kacper Janowski 2021 *********** END OF FILE ******/</span></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html">LSM6DS3Core</a></div><div class="ttdoc">Klasa zawierająca podstawowe funkcje/metody sensora LSM6DS3.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:289</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_a2ae1ffc7974f41904f5b416230e0a2e8"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#a2ae1ffc7974f41904f5b416230e0a2e8">LSM6DS3Core::LSM6DS3_one_register_read</a></div><div class="ttdeci">uint16_t LSM6DS3_one_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr)</div><div class="ttdoc">Metoda odczytująca wartość z rejestru.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:114</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_a610b90e2346d4b2fc26aa37f0aabb36e"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#a610b90e2346d4b2fc26aa37f0aabb36e">LSM6DS3Core::LSM6DS3Core</a></div><div class="ttdeci">LSM6DS3Core()</div><div class="ttdoc">Domyślny, pusty konstruktor klasy LSM6DS3Core.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:295</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_a6b932161654ecc1f49188208922010b6"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#a6b932161654ecc1f49188208922010b6">LSM6DS3Core::~LSM6DS3Core</a></div><div class="ttdeci">~LSM6DS3Core()</div><div class="ttdoc">Destruktor obiektu klasy LSM6DS3Core.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:300</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_a6e2eba1e26d9c700308579c5b4ebb9d8"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#a6e2eba1e26d9c700308579c5b4ebb9d8">LSM6DS3Core::ACC_Mode_Init</a></div><div class="ttdeci">void ACC_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL)</div><div class="ttdoc">Metoda ustawiająca tryb pracy akcelerometru rejestr CTRL1_XL (dokumentacja str. 54)</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:31</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_a72e7b656d4cfbd81a681586ffe8feaf4"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#a72e7b656d4cfbd81a681586ffe8feaf4">LSM6DS3Core::Accelerometer_Init</a></div><div class="ttdeci">void Accelerometer_Init(uint16_t Value)</div><div class="ttdoc">Metoda inicjalizująca akcelerometr LSM6DS3.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:45</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_a920b3848b340d2083f4bc2478894d449"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#a920b3848b340d2083f4bc2478894d449">LSM6DS3Core::Gyroscope_Init</a></div><div class="ttdeci">void Gyroscope_Init(uint16_t Value)</div><div class="ttdoc">Metoda inicjalizująca żyroskop LSM6DS3.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:217</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_a95b21195d4fefb712e89f7bcc909078f"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#a95b21195d4fefb712e89f7bcc909078f">LSM6DS3Core::Gyro_Mode_Init</a></div><div class="ttdeci">void Gyro_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_G, uint16_t FS_G, uint16_t FS_125)</div><div class="ttdoc">Metoda ustawiająca tryb pracy żyroskopu rejestr CTRL2_G (dokumentacja str. 55)</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:205</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_a99758851e4474fbb5ff4e3a9ddb1c1df"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#a99758851e4474fbb5ff4e3a9ddb1c1df">LSM6DS3Core::LSM6DS3_multiple_register_read</a></div><div class="ttdeci">void LSM6DS3_multiple_register_read(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg)</div><div class="ttdoc">Metoda odczytująca wartości z wielu rejestrów jeden po drugim.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:130</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_core_html_ae797b51afdefac165317661fca830716"><div class="ttname"><a href="class_l_s_m6_d_s3_core.html#ae797b51afdefac165317661fca830716">LSM6DS3Core::LSM6DS3_register_write</a></div><div class="ttdeci">void LSM6DS3_register_write(uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value)</div><div class="ttdoc">Metoda odpowiedzialna za zapis Value do rejestru RegisterAddr w urządzeniu o adresie DeviceAddr.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:100</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html"><div class="ttname"><a href="class_l_s_m6_d_s3.html">LSM6DS3</a></div><div class="ttdoc">Klasa rozszerzająca podstawowe funkcje/metody sensora LSM6DS3.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:322</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_a11f8806efc9f9f0a96b5ce61e9f8a7e5"><div class="ttname"><a href="class_l_s_m6_d_s3.html#a11f8806efc9f9f0a96b5ce61e9f8a7e5">LSM6DS3::Temperature_read_value</a></div><div class="ttdeci">void Temperature_read_value(TempOutput_t *OutData)</div><div class="ttdoc">Metoda zwracająca wartosc temeratury w skali stopni celsjusza.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:301</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_a276844f40f90be690cb0f87025044507"><div class="ttname"><a href="class_l_s_m6_d_s3.html#a276844f40f90be690cb0f87025044507">LSM6DS3::Gyroscope_XYZ_Output_open</a></div><div class="ttdeci">void Gyroscope_XYZ_Output_open()</div><div class="ttdoc">Metoda konfigurująca rejestr odpiewiedzialny za aktywowanie odczytywania rejestrów,...</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:229</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_a5416a3ae3ded6d1b8f48a478e4007aee"><div class="ttname"><a href="class_l_s_m6_d_s3.html#a5416a3ae3ded6d1b8f48a478e4007aee">LSM6DS3::Accelerometer_XYZ_read_value</a></div><div class="ttdeci">void Accelerometer_XYZ_read_value(AccelOutput_t *OutData, SensorSettings_t *range)</div><div class="ttdoc">Metoda wyznaczające końcowe wartości pomiaru przyśpieszenia we wszystkich osiach X,...</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:144</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_a900b4cc99e67c7c04162db1c7bb8818c"><div class="ttname"><a href="class_l_s_m6_d_s3.html#a900b4cc99e67c7c04162db1c7bb8818c">LSM6DS3::Config_register_CTRL5</a></div><div class="ttdeci">uint16_t Config_register_CTRL5(uint16_t ROUNDING, uint16_t ST_G, uint16_t ST_XL)</div><div class="ttdoc">Funkcja konfigurujaca rejestr CTRL5_C (zdefiniowane wartości w pliku Lsm6ds3IoT.h) dokumentacja stron...</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:191</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_a98a6e0ad20bce96a45e57ff30522c290"><div class="ttname"><a href="class_l_s_m6_d_s3.html#a98a6e0ad20bce96a45e57ff30522c290">LSM6DS3::Accelerometer_XYZ_Output_open</a></div><div class="ttdeci">void Accelerometer_XYZ_Output_open()</div><div class="ttdoc">Metoda konfigurująca rejestr odpiewiedzialny za aktywowanie odczytywania rejestrów,...</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:85</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_a98ec1d6dffd920879823db65e44021af"><div class="ttname"><a href="class_l_s_m6_d_s3.html#a98ec1d6dffd920879823db65e44021af">LSM6DS3::Accelerometer_High_perf_Disable</a></div><div class="ttdeci">void Accelerometer_High_perf_Disable(LSM6DS3 lsm6ds3)</div><div class="ttdoc">Metoda wyłaczajaca tryb high performance akcelerometru (dokumentacja str. 59)</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:58</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_ac86add4bcabcc750fd9cedf8be71d2a4"><div class="ttname"><a href="class_l_s_m6_d_s3.html#ac86add4bcabcc750fd9cedf8be71d2a4">LSM6DS3::Gyroscope_XYZ_read_value</a></div><div class="ttdeci">void Gyroscope_XYZ_read_value(GyroOutput_t *OutData, SensorSettings_t *range)</div><div class="ttdoc">Metoda wyznaczające końcowe wartości pomiaru żyroskopem we wszystkich osiach X, Y,...</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:243</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_ad9d1c959d9b5d15037b12852a60c952c"><div class="ttname"><a href="class_l_s_m6_d_s3.html#ad9d1c959d9b5d15037b12852a60c952c">LSM6DS3::~LSM6DS3</a></div><div class="ttdeci">~LSM6DS3()</div><div class="ttdoc">Destruktor obiektu klasy LSM6DS3.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:333</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_add8c8df4b3807133c7d5292e9f0a042f"><div class="ttname"><a href="class_l_s_m6_d_s3.html#add8c8df4b3807133c7d5292e9f0a042f">LSM6DS3::Config_register_CTRL6</a></div><div class="ttdeci">uint16_t Config_register_CTRL6(uint16_t TRIG_ENval, uint16_t LVLenval, uint16_t LVL2_ENval, uint16_t XL_HM_MODEval)</div><div class="ttdoc">Funkcja konfigurujaca rejestr CTRL6_C (zdefiniowane wartości w pliku Lsm6ds3IoT.h) dokumentacja stron...</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:291</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_ae43ce392b8d7a86a57761e78e6154b3d"><div class="ttname"><a href="class_l_s_m6_d_s3.html#ae43ce392b8d7a86a57761e78e6154b3d">LSM6DS3::Accelerometer_High_perf_Enable</a></div><div class="ttdeci">void Accelerometer_High_perf_Enable(LSM6DS3 lsm6ds3)</div><div class="ttdoc">Metoda włączająca tryb high performance akcelerometru (dokumentacja str. 59)</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.cpp:71</div></div>
+<div class="ttc" id="aclass_l_s_m6_d_s3_html_aed663673377c969b61dfae663fdc8b23"><div class="ttname"><a href="class_l_s_m6_d_s3.html#aed663673377c969b61dfae663fdc8b23">LSM6DS3::LSM6DS3</a></div><div class="ttdeci">LSM6DS3()</div><div class="ttdoc">Domyślny, pusty konstruktor klasy LSM6DS3.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:328</div></div>
+<div class="ttc" id="astruct_accel_output__t_html"><div class="ttname"><a href="struct_accel_output__t.html">AccelOutput_t</a></div><div class="ttdoc">Ta struktura zawiera zmienne dla dane wyjściowe akcelerometru.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:257</div></div>
+<div class="ttc" id="astruct_gyro_output__t_html"><div class="ttname"><a href="struct_gyro_output__t.html">GyroOutput_t</a></div><div class="ttdoc">Ta struktura zawiera zmienne dla dane wyjściowe żroskopu.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:268</div></div>
+<div class="ttc" id="astruct_sensor_settings__t_html"><div class="ttname"><a href="struct_sensor_settings__t.html">SensorSettings_t</a></div><div class="ttdoc">Ta struktura zawiera ustawienia używane do obliczeń</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:229</div></div>
+<div class="ttc" id="astruct_sensor_settings__t_html_a143258f1fe8c658dadf7f5ce87861f52"><div class="ttname"><a href="struct_sensor_settings__t.html#a143258f1fe8c658dadf7f5ce87861f52">SensorSettings_t::tempEnable</a></div><div class="ttdeci">uint8_t tempEnable</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:250</div></div>
+<div class="ttc" id="astruct_sensor_settings__t_html_a2918acf1a083e1e0cab94380335381c1"><div class="ttname"><a href="struct_sensor_settings__t.html#a2918acf1a083e1e0cab94380335381c1">SensorSettings_t::gyroEnable</a></div><div class="ttdeci">uint8_t gyroEnable</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:233</div></div>
+<div class="ttc" id="astruct_sensor_settings__t_html_ae0668205fddacc8667b1b39830cee231"><div class="ttname"><a href="struct_sensor_settings__t.html#ae0668205fddacc8667b1b39830cee231">SensorSettings_t::accelEnable</a></div><div class="ttdeci">uint8_t accelEnable</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:241</div></div>
+<div class="ttc" id="astruct_temp_output__t_html"><div class="ttname"><a href="struct_temp_output__t.html">TempOutput_t</a></div><div class="ttdoc">Ta struktura zawiera zmienną dla danych wyściowych temperatury.</div><div class="ttdef"><b>Definition:</b> Lsm6ds3IoT.h:279</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_76f39603d72ea86f01c66ffb37445e6e.html">LSM6DS3</a></li><li class="navelem"><a class="el" href="_lsm6ds3_io_t_8h.html">Lsm6ds3IoT.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Biblioteka_LSM6DS3: Dokumentacja klasy LSM6DS3Core</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Biblioteka_LSM6DS3
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Biblioteka do sensora LSM6DS3 w Arduino nano 33 IoT</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_l_s_m6_d_s3_core.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="class_l_s_m6_d_s3_core-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy LSM6DS3Core</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa zawierająca podstawowe funkcje/metody sensora <a class="el" href="class_l_s_m6_d_s3.html" title="Klasa rozszerzająca podstawowe funkcje/metody sensora LSM6DS3.">LSM6DS3</a>.  
+</p>
+
+<p><code>#include &lt;<a class="el" href="_lsm6ds3_io_t_8h_source.html">Lsm6ds3IoT.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla LSM6DS3Core</div>
+<div class="dyncontent">
+<div class="center"><img src="class_l_s_m6_d_s3_core__inherit__graph.png" border="0" usemap="#a_l_s_m6_d_s3_core_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_l_s_m6_d_s3_core_inherit__map" id="a_l_s_m6_d_s3_core_inherit__map">
+<area shape="rect" title="Klasa zawierająca podstawowe funkcje/metody sensora LSM6DS3." alt="" coords="5,5,113,32"/>
+<area shape="rect" href="class_l_s_m6_d_s3.html" title="Klasa rozszerzająca podstawowe funkcje/metody sensora LSM6DS3." alt="" coords="19,80,100,107"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a610b90e2346d4b2fc26aa37f0aabb36e"><td class="memItemLeft" align="right" valign="top"><a id="a610b90e2346d4b2fc26aa37f0aabb36e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#a610b90e2346d4b2fc26aa37f0aabb36e">LSM6DS3Core</a> ()</td></tr>
+<tr class="memdesc:a610b90e2346d4b2fc26aa37f0aabb36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Domyślny, pusty konstruktor klasy <a class="el" href="class_l_s_m6_d_s3_core.html" title="Klasa zawierająca podstawowe funkcje/metody sensora LSM6DS3.">LSM6DS3Core</a>. <br /></td></tr>
+<tr class="separator:a610b90e2346d4b2fc26aa37f0aabb36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b932161654ecc1f49188208922010b6"><td class="memItemLeft" align="right" valign="top"><a id="a6b932161654ecc1f49188208922010b6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#a6b932161654ecc1f49188208922010b6">~LSM6DS3Core</a> ()</td></tr>
+<tr class="memdesc:a6b932161654ecc1f49188208922010b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruktor obiektu klasy <a class="el" href="class_l_s_m6_d_s3_core.html" title="Klasa zawierająca podstawowe funkcje/metody sensora LSM6DS3.">LSM6DS3Core</a>. <br /></td></tr>
+<tr class="separator:a6b932161654ecc1f49188208922010b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e2eba1e26d9c700308579c5b4ebb9d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#a6e2eba1e26d9c700308579c5b4ebb9d8">ACC_Mode_Init</a> (<a class="el" href="struct_sensor_settings__t.html">SensorSettings_t</a> *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL)</td></tr>
+<tr class="memdesc:a6e2eba1e26d9c700308579c5b4ebb9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda ustawiająca tryb pracy akcelerometru rejestr CTRL1_XL (dokumentacja str. 54)  <a href="class_l_s_m6_d_s3_core.html#a6e2eba1e26d9c700308579c5b4ebb9d8">Więcej...</a><br /></td></tr>
+<tr class="separator:a6e2eba1e26d9c700308579c5b4ebb9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e7b656d4cfbd81a681586ffe8feaf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#a72e7b656d4cfbd81a681586ffe8feaf4">Accelerometer_Init</a> (uint16_t Value)</td></tr>
+<tr class="memdesc:a72e7b656d4cfbd81a681586ffe8feaf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda inicjalizująca akcelerometr <a class="el" href="class_l_s_m6_d_s3.html" title="Klasa rozszerzająca podstawowe funkcje/metody sensora LSM6DS3.">LSM6DS3</a>.  <a href="class_l_s_m6_d_s3_core.html#a72e7b656d4cfbd81a681586ffe8feaf4">Więcej...</a><br /></td></tr>
+<tr class="separator:a72e7b656d4cfbd81a681586ffe8feaf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae1ffc7974f41904f5b416230e0a2e8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#a2ae1ffc7974f41904f5b416230e0a2e8">LSM6DS3_one_register_read</a> (uint16_t DeviceAddr, uint16_t RegisterAddr)</td></tr>
+<tr class="memdesc:a2ae1ffc7974f41904f5b416230e0a2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda odczytująca wartość z rejestru.  <a href="class_l_s_m6_d_s3_core.html#a2ae1ffc7974f41904f5b416230e0a2e8">Więcej...</a><br /></td></tr>
+<tr class="separator:a2ae1ffc7974f41904f5b416230e0a2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99758851e4474fbb5ff4e3a9ddb1c1df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#a99758851e4474fbb5ff4e3a9ddb1c1df">LSM6DS3_multiple_register_read</a> (uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t numOfReg)</td></tr>
+<tr class="memdesc:a99758851e4474fbb5ff4e3a9ddb1c1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda odczytująca wartości z wielu rejestrów jeden po drugim.  <a href="class_l_s_m6_d_s3_core.html#a99758851e4474fbb5ff4e3a9ddb1c1df">Więcej...</a><br /></td></tr>
+<tr class="separator:a99758851e4474fbb5ff4e3a9ddb1c1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae797b51afdefac165317661fca830716"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#ae797b51afdefac165317661fca830716">LSM6DS3_register_write</a> (uint16_t DeviceAddr, uint16_t RegisterAddr, uint16_t Value)</td></tr>
+<tr class="memdesc:ae797b51afdefac165317661fca830716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda odpowiedzialna za zapis Value do rejestru RegisterAddr w urządzeniu o adresie DeviceAddr.  <a href="class_l_s_m6_d_s3_core.html#ae797b51afdefac165317661fca830716">Więcej...</a><br /></td></tr>
+<tr class="separator:ae797b51afdefac165317661fca830716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b21195d4fefb712e89f7bcc909078f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#a95b21195d4fefb712e89f7bcc909078f">Gyro_Mode_Init</a> (<a class="el" href="struct_sensor_settings__t.html">SensorSettings_t</a> *Settings, uint16_t ODR_G, uint16_t FS_G, uint16_t FS_125)</td></tr>
+<tr class="memdesc:a95b21195d4fefb712e89f7bcc909078f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda ustawiająca tryb pracy żyroskopu rejestr CTRL2_G (dokumentacja str. 55)  <a href="class_l_s_m6_d_s3_core.html#a95b21195d4fefb712e89f7bcc909078f">Więcej...</a><br /></td></tr>
+<tr class="separator:a95b21195d4fefb712e89f7bcc909078f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920b3848b340d2083f4bc2478894d449"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_s_m6_d_s3_core.html#a920b3848b340d2083f4bc2478894d449">Gyroscope_Init</a> (uint16_t Value)</td></tr>
+<tr class="memdesc:a920b3848b340d2083f4bc2478894d449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda inicjalizująca żyroskop <a class="el" href="class_l_s_m6_d_s3.html" title="Klasa rozszerzająca podstawowe funkcje/metody sensora LSM6DS3.">LSM6DS3</a>.  <a href="class_l_s_m6_d_s3_core.html#a920b3848b340d2083f4bc2478894d449">Więcej...</a><br /></td></tr>
+<tr class="separator:a920b3848b340d2083f4bc2478894d449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a6e2eba1e26d9c700308579c5b4ebb9d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e2eba1e26d9c700308579c5b4ebb9d8">&#9670;&nbsp;</a></span>ACC_Mode_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LSM6DS3Core::ACC_Mode_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_sensor_settings__t.html">SensorSettings_t</a> *&#160;</td>
+          <td class="paramname"><em>Settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>ODR_XL</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>FS_XL</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>BW_XL</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Settings</td><td>Struktura inicjalizująca parametry sensora </td></tr>
+    <tr><td class="paramname">ODR_XL</td><td>Tryb pracy </td></tr>
+    <tr><td class="paramname">FS_XL</td><td>Skala przyśpieszenia </td></tr>
+    <tr><td class="paramname">BW_XL</td><td>Pasmo filtru antyaliasingowego </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a72e7b656d4cfbd81a681586ffe8feaf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72e7b656d4cfbd81a681586ffe8feaf4">&#9670;&nbsp;</a></span>Accelerometer_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LSM6DS3Core::Accelerometer_Init </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>Value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Value</td><td>Wartość szesnastkowa odpowiedzialna za konfiguracja trybu pracy akcelerometru (dokumentacja str. 54) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; Adres urządzenia 0x6A</p>
+<p>&lt; Rejest kontrolny CTRL1_XL register (53.s)</p>
+<p>&lt; bity [7 6 5 4] Wyjściowa prędkość transmisji danych i wybór trybu zasilania, bity [3 2] przyśpieszenie, bity [1 0] filtr</p>
+
+</div>
+</div>
+<a id="a95b21195d4fefb712e89f7bcc909078f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b21195d4fefb712e89f7bcc909078f">&#9670;&nbsp;</a></span>Gyro_Mode_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LSM6DS3Core::Gyro_Mode_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_sensor_settings__t.html">SensorSettings_t</a> *&#160;</td>
+          <td class="paramname"><em>Settings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>ODR_G</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>FS_G</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>FS_125</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Settings</td><td>Struktura inicjalizująca parametry sensora </td></tr>
+    <tr><td class="paramname">ODR_G</td><td>Tryb pracy żyroskopu </td></tr>
+    <tr><td class="paramname">FS_G</td><td>Ustawienie skali dps (250, 500, 1000, 2000) </td></tr>
+    <tr><td class="paramname">FS_125</td><td>Ustawienie skali dps 125 (wartość 0 - disable) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a920b3848b340d2083f4bc2478894d449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920b3848b340d2083f4bc2478894d449">&#9670;&nbsp;</a></span>Gyroscope_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LSM6DS3Core::Gyroscope_Init </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>Value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Value</td><td>Wartość szesnastkowa odpowiedzialna za konfiguracja trybu pracy żyroskopu (dokumentacja str. 55) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; Adres urządzenia 0x6A</p>
+<p>&lt; Rejest kontrolny CTRL2_G register (55.s)</p>
+<p>&lt; bity [7 6 5 4] Wyjściowa prędkość transmisji danych i wybór trybu zasilania, bity [3 2] wartość dps, bity [1] ful scale</p>
+
+</div>
+</div>
+<a id="a99758851e4474fbb5ff4e3a9ddb1c1df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99758851e4474fbb5ff4e3a9ddb1c1df">&#9670;&nbsp;</a></span>LSM6DS3_multiple_register_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LSM6DS3Core::LSM6DS3_multiple_register_read </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>DeviceAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>RegisterAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>numOfReg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DeviceAddr</td><td>Adres urządzenia </td></tr>
+    <tr><td class="paramname">RegisterAddr</td><td>Adres rejestru od które ma zostać rozpoczete odczytywanie </td></tr>
+    <tr><td class="paramname">numOfReg</td><td>Liczba kolejnych rejestrów do </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; Nie kończ transmisji na jednym rejestrze</p>
+<p>&lt; Odczytanie danych z numOfReg rejestrów</p>
+
+</div>
+</div>
+<a id="a2ae1ffc7974f41904f5b416230e0a2e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae1ffc7974f41904f5b416230e0a2e8">&#9670;&nbsp;</a></span>LSM6DS3_one_register_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t LSM6DS3Core::LSM6DS3_one_register_read </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>DeviceAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>RegisterAddr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DeviceAddr</td><td>Adres urządzenia </td></tr>
+    <tr><td class="paramname">RegisterAddr</td><td>Adres rejestru z którego ma zostać odczytana wartość </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>uint16_t Funkcja zwraca zawrtość rejestru podanego w parametrze RegisterAddr </dd></dl>
+<p>&lt; Zakończenie transmisji</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_l_s_m6_d_s3_core_a2ae1ffc7974f41904f5b416230e0a2e8_icgraph.png" border="0" usemap="#aclass_l_s_m6_d_s3_core_a2ae1ffc7974f41904f5b416230e0a2e8_icgraph" alt=""/></div>
+<map name="aclass_l_s_m6_d_s3_core_a2ae1ffc7974f41904f5b416230e0a2e8_icgraph" id="aclass_l_s_m6_d_s3_core_a2ae1ffc7974f41904f5b416230e0a2e8_icgraph">
+<area shape="rect" title="Metoda odczytująca wartość z rejestru." alt="" coords="227,71,401,112"/>
+<area shape="rect" href="class_l_s_m6_d_s3.html#a5416a3ae3ded6d1b8f48a478e4007aee" title="Metoda wyznaczające końcowe wartości pomiaru przyśpieszenia we wszystkich osiach X,..." alt="" coords="5,5,179,47"/>
+<area shape="rect" href="class_l_s_m6_d_s3.html#ac86add4bcabcc750fd9cedf8be71d2a4" title="Metoda wyznaczające końcowe wartości pomiaru żyroskopem we wszystkich osiach X, Y,..." alt="" coords="16,71,168,112"/>
+<area shape="rect" href="class_l_s_m6_d_s3.html#a11f8806efc9f9f0a96b5ce61e9f8a7e5" title="Metoda zwracająca wartosc temeratury w skali stopni celsjusza." alt="" coords="11,136,173,177"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae797b51afdefac165317661fca830716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae797b51afdefac165317661fca830716">&#9670;&nbsp;</a></span>LSM6DS3_register_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LSM6DS3Core::LSM6DS3_register_write </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>DeviceAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>RegisterAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>Value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DeviceAddr</td><td>Adres urządzenia </td></tr>
+    <tr><td class="paramname">RegisterAddr</td><td>Adres rejestru który ma zostać skonfigurowany </td></tr>
+    <tr><td class="paramname">Value</td><td>Wartość odpowiedzialna za konfiguracje rejestru </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_l_s_m6_d_s3_core_ae797b51afdefac165317661fca830716_icgraph.png" border="0" usemap="#aclass_l_s_m6_d_s3_core_ae797b51afdefac165317661fca830716_icgraph" alt=""/></div>
+<map name="aclass_l_s_m6_d_s3_core_ae797b51afdefac165317661fca830716_icgraph" id="aclass_l_s_m6_d_s3_core_ae797b51afdefac165317661fca830716_icgraph">
+<area shape="rect" title="Metoda odpowiedzialna za zapis Value do rejestru RegisterAddr w urządzeniu o adresie DeviceAddr." alt="" coords="227,39,401,80"/>
+<area shape="rect" href="class_l_s_m6_d_s3.html#a98ec1d6dffd920879823db65e44021af" title="Metoda wyłaczajaca tryb high performance akcelerometru (dokumentacja str. 59)" alt="" coords="5,5,179,47"/>
+<area shape="rect" href="class_l_s_m6_d_s3.html#ae43ce392b8d7a86a57761e78e6154b3d" title="Metoda włączająca tryb high performance akcelerometru (dokumentacja str. 59)" alt="" coords="5,71,179,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li><a class="el" href="_lsm6ds3_io_t_8h_source.html">Lsm6ds3IoT.h</a></li>
+<li><a class="el" href="_lsm6ds3_io_t_8cpp.html">Lsm6ds3IoT.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_l_s_m6_d_s3_core.html">LSM6DS3Core</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

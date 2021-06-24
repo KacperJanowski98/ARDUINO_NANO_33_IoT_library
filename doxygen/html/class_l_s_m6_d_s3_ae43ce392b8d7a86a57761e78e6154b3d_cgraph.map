@@ -1,0 +1,4 @@
+<map id="LSM6DS3::Accelerometer_High_perf_Enable" name="LSM6DS3::Accelerometer_High_perf_Enable">
+<area shape="rect" id="node1" title="Metoda włączająca tryb high performance akcelerometru (dokumentacja str. 59)" alt="" coords="5,5,179,47"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3_core.html#ae797b51afdefac165317661fca830716" title="Metoda odpowiedzialna za zapis Value do rejestru RegisterAddr w urządzeniu o adresie DeviceAddr." alt="" coords="227,5,401,47"/>
+</map>

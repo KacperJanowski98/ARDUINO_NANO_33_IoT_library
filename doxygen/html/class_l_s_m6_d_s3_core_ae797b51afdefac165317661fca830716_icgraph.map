@@ -1,0 +1,5 @@
+<map id="LSM6DS3Core::LSM6DS3_register_write" name="LSM6DS3Core::LSM6DS3_register_write">
+<area shape="rect" id="node1" title="Metoda odpowiedzialna za zapis Value do rejestru RegisterAddr w urządzeniu o adresie DeviceAddr." alt="" coords="227,39,401,80"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3.html#a98ec1d6dffd920879823db65e44021af" title="Metoda wyłaczajaca tryb high performance akcelerometru (dokumentacja str. 59)" alt="" coords="5,5,179,47"/>
+<area shape="rect" id="node3" href="$class_l_s_m6_d_s3.html#ae43ce392b8d7a86a57761e78e6154b3d" title="Metoda włączająca tryb high performance akcelerometru (dokumentacja str. 59)" alt="" coords="5,71,179,112"/>
+</map>

@@ -1,12 +1,11 @@
 /**
+ ************************************************************************************
  * @file Lsm6ds3IoT.h
  * @author Kacper Janowski
- * @brief 
+ * @brief Plik z deklaracjami funkcji obsługujących sensor LSM6DS3
  * @version 0.1
  * @date 2021-05-04
- * 
- * @copyright Copyright (c) 2021
- * 
+ ************************************************************************************
  */
 #ifndef _LSM6DS3IOT_H_
 #define _LSM6DS3IOT_H_
@@ -14,10 +13,16 @@
 #include "Arduino.h"
 #include "Wire.h"
 
-/************* LSM6DS3 sensor I2C adres **************/
+/**
+ * @brief LSM6DS3 sensor I2C adres
+ *  
+ */
 #define LSM6DS3_I2C                             0x6A 
 
-/**************** Adresy w urządzeniu ****************/
+/**
+ * @brief Adresy rejestrów w urządzeniu
+ *  
+ */
 #define LSM6DS3_FUNC_CFG_ACCESS 			0X01
 #define LSM6DS3_SENSOR_SYNC_TIME  	    	      0X04
 #define LSM6DS3_FIFO_CTRL1  		        	0X06
@@ -91,7 +96,10 @@
 #define LSM6DS3_MD1_CFG  		            0X5E
 #define LSM6DS3_MD2_CFG  		            0X5F
 
-/***** Tryby pracy akcelerometru (ODR_XL - CTRL1_XL) ******/
+/**
+ * @brief Tryby pracy akcelerometru (ODR_XL - CTRL1_XL
+ *  
+ */
 #define POWER_DOWN                              0x0
 #define LOW_POWER_12_5                          0x1
 #define LOW_POWER_26                            0x2
@@ -104,26 +112,41 @@
 #define HIGH_PERFORMANCE_3_33                   0x9
 #define HIGH_PERFORMANCE_6_66                   0xA
 
-/********** Przyśpieszenie (FS_XL - CTRL1_XL) *************/
+/**
+ * @brief Przyśpieszenie (FS_XL - CTRL1_XL)
+ *  
+ */
 #define ACC_2G                                  0x0
 #define ACC_4G                                  0x2
 #define ACC_8G                                  0x3
 #define ACC_16G                                 0x1
 
-/*********** Pasmo filtru (BW_XL - CTRL1_XL) **************/
+/**
+ * @brief Pasmo filtru (BW_XL - CTRL1_XL)
+ *  
+ */
 #define ACC_FILTER_400                          0x0
 #define ACC_FILTER_200                          0x1
 #define ACC_FILTER_100                          0x2
 #define ACC_FILTER_50                           0x3
 
-/******* Inkrementacja adresów (IF_INC - CTRL3_C) ********/
+/**
+ * @brief Inkrementacja adresów (IF_INC - CTRL3_C)
+ *  
+ */
 #define ACC_AUTO_INC_ADDR                       0x04
 
-/* Wybór pasma akcelerometru (XL_BW_SCAL_ORD - CTRL4_C) */
+/**
+ * @brief Wybór pasma akcelerometru (XL_BW_SCAL_ORD - CTRL4_C)
+ *  
+ */
 #define ACC_BANDWIDTH_ODR                       ~(1 << 7)
 #define ACC_BANDWIDTH_BW_XL                     (1 << 7)
 
-/**** Circular burst-mode (ROUNDING[2:0] - CTRL5_C) *****/
+/**
+ * @brief Circular burst-mode (ROUNDING[2:0] - CTRL5_C)
+ *  
+ */
 #define NO_ROUNDING_ROUND                       0x0
 #define ACC_ONLY_ROUND                          0x1
 #define GYRO_ONLY_ROUND                         0x2
@@ -133,17 +156,28 @@
 #define GTRO_ACC_REG_ROUND                      0x6
 #define GERO_ACC_REG2_ROUND                     0x7
 
-/**** Angular rate self test (ST_G [1:0] - CTRL5_C) ****/
+/**
+ * @brief Angular rate self test (ST_G [1:0] - CTRL5_C)
+ *  
+ */
 #define NORMAL_MODE_ST_ANG                      0x0
 #define POSITIVE_SIGN_SELF_TEST_ANG             0x1
 #define NEGATIVE_SIGN_SELF_TEST_ANG             0x3
 
-/*** Accelerometer self test (ST_G [1:0] - CTRL5_C) ****/
+
+
+/**
+ * @brief Accelerometer self test (ST_G [1:0] - CTRL5_C)
+ *  
+ */
 #define NORAML_MODE_ST_ACC                      0x0
 #define POSITIVE_SIGN_SELF_TEST                 0x1
 #define NEGATIVE_SIGN_SELF_TEST                 0x2
 
-/******* Tryby pracy żyroskopu (ODR_G - CTRL2_G) *******/
+/**
+ * @brief Tryby pracy żyroskopu (ODR_G - CTRL2_G)
+ *  
+ */
 #define POWER_DOWN_G                              0x0
 #define LOW_POWER_12_5_G                          0x1
 #define LOW_POWER_26_G                            0x2
@@ -154,19 +188,31 @@
 #define HIGH_PERFORMANCE_833_G                    0x7
 #define HIGH_PERFORMANCE_1_66_G                   0x8
 
-/********** dsp żyroskop (FS_G - CTRL2_G) *************/
+/**
+ * @brief dsp żyroskop (FS_G - CTRL2_G)
+ *  
+ */
 #define G_250                                     0x0
 #define G_500                                     0x1
 #define G_1000                                    0x2
 #define G_2000                                    0x3
 
-/********** dsp żyroskop (FS_G - CTRL2_G) *************/
+/**
+ * @brief Full scale 125
+ *  
+ */
 #define G_FULL_SCALE_125                          0x1
 
-/***** Sleep mode żyroskop (SLEEP_G - CTRL4_C) ********/
+/**
+ * @brief Sleep mode żyroskop (SLEEP_G - CTRL4_C)
+ *  
+ */
 #define SLEEP_G_Enable                            0x40
 
-/********** Konfiguracja rejestru CTRL6_C *************/
+/**
+ * @brief Konfiguracja rejestru CTRL6_C
+ *  
+ */
 #define TRIG_EN                                   1
 #define TRIG_EN_disable                           0
 #define LVLen                                     1
@@ -176,17 +222,22 @@
 #define XL_HM_MODE                                0
 #define XL_HM_MODE_disable                        1
 
-/** Ta struktura zawiera ustawienia używane do obliczeń **/
+/**
+ * @brief Ta struktura zawiera ustawienia używane do obliczeń
+ *  
+ */
 typedef struct {
   public:
-        // Gyroscope
+        /** Żyroskop
+         */
         uint8_t gyroEnable;
         uint16_t gyroRange;
         uint16_t gyroSampleRate;
         uint16_t gyroBandWidth;
         uint16_t gyroInitialVal;
 
-        // Accelerometer
+        /** Akcelerometr
+         */
         uint8_t accelEnable;
         uint8_t accelODROff;
         uint16_t accelRange;
@@ -194,11 +245,15 @@ typedef struct {
         uint16_t accelBandWidth;
         uint16_t accelInitialVal;
 
-        // Temerature
+        /** Temperatura
+         */
         uint8_t tempEnable;
 }SensorSettings_t;
 
-/** Ta struktura zawiera zmienne dla dane wyjściowe akcelerometru **/
+/**
+ * @brief Ta struktura zawiera zmienne dla dane wyjściowe akcelerometru
+ *  
+ */
 typedef struct {
 public:
       float Xa;
@@ -206,7 +261,10 @@ public:
       float Za;
 }AccelOutput_t;
 
-/** Ta struktura zawiera zmienne dla dane wyjściowe żroskopu **/
+/**
+ * @brief Ta struktura zawiera zmienne dla dane wyjściowe żroskopu
+ *  
+ */
 typedef struct {
 public:
       float Xa;
@@ -214,7 +272,10 @@ public:
       float Za;
 }GyroOutput_t;
 
-/** Ta struktura zawiera zmienną dla danych wyściowych temperatury **/
+/**
+ * @brief Ta struktura zawiera zmienną dla danych wyściowych temperatury
+ *  
+ */
 typedef struct {
 public:
       float Ta;
@@ -227,6 +288,17 @@ public:
 class LSM6DS3Core
 {
 public:
+      /**
+       * @brief Domyślny, pusty konstruktor klasy LSM6DS3Core
+       * 
+       */
+      LSM6DS3Core(){}
+      /**
+       * @brief Destruktor obiektu klasy LSM6DS3Core
+       * 
+       */
+      ~LSM6DS3Core(){}
+
       void ACC_Mode_Init(SensorSettings_t *Settings, uint16_t ODR_XL, uint16_t FS_XL, uint16_t BW_XL);
 
       void Accelerometer_Init(uint16_t Value);
@@ -249,6 +321,17 @@ public:
 class LSM6DS3 : public LSM6DS3Core
 {
 public:
+      /**
+       * @brief Domyślny, pusty konstruktor klasy LSM6DS3
+       * 
+       */
+      LSM6DS3(){}
+      /**
+       * @brief Destruktor obiektu klasy LSM6DS3
+       * 
+       */
+      ~LSM6DS3(){}
+
       SensorSettings_t settings;
 
       void Accelerometer_XYZ_Output_open();
@@ -271,3 +354,5 @@ public:
 };
 
 #endif //Accelerometer
+
+/********************************** (C) COPYRIGHT Kacper Janowski 2021 *********** END OF FILE ******/

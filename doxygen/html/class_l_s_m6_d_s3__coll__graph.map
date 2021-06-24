@@ -1,0 +1,5 @@
+<map id="LSM6DS3" name="LSM6DS3">
+<area shape="rect" id="node1" title="Klasa rozszerzająca podstawowe funkcje/metody sensora LSM6DS3." alt="" coords="88,95,169,121"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3_core.html" title="Klasa zawierająca podstawowe funkcje/metody sensora LSM6DS3." alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node3" href="$struct_sensor_settings__t.html" title="Ta struktura zawiera ustawienia używane do obliczeń" alt="" coords="138,5,261,32"/>
+</map>

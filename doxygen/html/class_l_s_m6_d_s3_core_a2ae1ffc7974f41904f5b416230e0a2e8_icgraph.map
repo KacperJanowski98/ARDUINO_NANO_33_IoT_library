@@ -1,0 +1,6 @@
+<map id="LSM6DS3Core::LSM6DS3_one_register_read" name="LSM6DS3Core::LSM6DS3_one_register_read">
+<area shape="rect" id="node1" title="Metoda odczytująca wartość z rejestru." alt="" coords="227,71,401,112"/>
+<area shape="rect" id="node2" href="$class_l_s_m6_d_s3.html#a5416a3ae3ded6d1b8f48a478e4007aee" title="Metoda wyznaczające końcowe wartości pomiaru przyśpieszenia we wszystkich osiach X,..." alt="" coords="5,5,179,47"/>
+<area shape="rect" id="node3" href="$class_l_s_m6_d_s3.html#ac86add4bcabcc750fd9cedf8be71d2a4" title="Metoda wyznaczające końcowe wartości pomiaru żyroskopem we wszystkich osiach X, Y,..." alt="" coords="16,71,168,112"/>
+<area shape="rect" id="node4" href="$class_l_s_m6_d_s3.html#a11f8806efc9f9f0a96b5ce61e9f8a7e5" title="Metoda zwracająca wartosc temeratury w skali stopni celsjusza." alt="" coords="11,136,173,177"/>
+</map>
