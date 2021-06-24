@@ -5,7 +5,8 @@ My own library to support the LSM6DS3 accelerometer built into the Arduino NANO 
 To run the library, you need the Visual Studio Code environment with the platform.io extension installed. A test program is written in the main.c file, running this file will run the sensor and read the measurement results, to see the results, install a program that reads data from the serial port
 
 The entire library is based on communication with the LSM6DS3 sensor via the I2C interface. The Wire.h libraries from Arduino were used to support this interface.
-Doxygen documentation: In the project folder, doxygen directory -> html -> index.html
+Doxygen documentation: In the project folder, doxygen directory -> html -> index.html.
+
 System documentation:
 https://content.arduino.cc/assets/st_imu_lsm6ds3_datasheet.pdf
 
